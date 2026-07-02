@@ -1,0 +1,293 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Your Basket · Care Channels International</title>
+
+  <link rel="icon" href="images/fyp_logo.png" type="image/png" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=Zalando+Sans+SemiExpanded:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="basket.css">
+</head>
+<body>
+  <header class="topbar" id="topbar" role="navigation" aria-label="Top">
+    <div class="wrap topbar__inner">
+      <nav class="nav" aria-label="Primary">
+        <div class="nav__left">
+          <a class="navlink" href="index.html">Home</a>
+          <a class="navlink navlink--active" href="shop.html">Shop</a>
+        </div>
+
+        <span class="navbrand" aria-label="Care Channels International">
+          <span class="navbrand__main">Care Channels</span>
+          <span class="navbrand__sub">International</span>
+        </span>
+
+        <div class="nav__rightWrap">
+          <div class="nav__right">
+            <a class="navlink" href="sponsor.html">Sponsor</a>
+            <a class="navlink" href="https://carechannels.org/contact-us/">Contact</a>
+          </div>
+
+          <a class="navicon" href="basket.html" aria-label="Basket">
+            <img src="images/basketicon.png" alt="Basket" class="navicon__img">
+            <span class="basket-badge" id="basketBadge">0</span>
+          </a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main class="basket-main">
+    <section class="basket-wrap">
+      <div class="basket-hero">
+        <h1 class="basket-title">Your Basket</h1>
+        <p class="basket-sub">Gathered with purpose. Ready to create impact.</p>
+      </div>
+
+      <div class="basket-layout">
+        <div class="basket-left">
+          <section class="basket-card">
+            <div class="basket-head">
+              <div></div>
+              <div class="basket-head__item">Item</div>
+              <div class="basket-head__qty">Qty.</div>
+              <div class="basket-head__price">Price</div>
+            </div>
+
+            <div id="basketItems"></div>
+          </section>
+
+          <section class="summary-card">
+            <h2 class="summary-title">Order Summary</h2>
+            <div class="summary-row">
+              <span>Sub-total</span>
+              <strong id="subtotalValue">$0</strong>
+            </div>
+            <div class="summary-row">
+              <span>Shipping</span>
+              <strong id="shippingValue">$0</strong>
+            </div>
+            <div class="summary-row summary-row--total">
+              <span>Total</span>
+              <strong id="totalValue">$0</strong>
+            </div>
+          </section>
+
+          <div class="checkout-wrap">
+            <button class="checkout-btn" id="checkoutBtn" type="button">Check Out</button>
+          </div>
+        </div>
+
+        <aside class="basket-right">
+          <section class="side-card side-card--message">
+            <h2 class="side-card__title">Leave a message with<br>your purchase</h2>
+            <textarea id="orderNote" class="message-box" placeholder="..."></textarea>
+          </section>
+
+          <section class="side-card side-card--impact">
+            <h2 class="side-card__title">Impact Calculator</h2>
+            <p class="impact-copy">With your current basket, you are helping to fund:</p>
+
+            <div class="impact-pill">
+              <span class="impact-pill__count" id="lunchCount">0</span>
+              <span class="impact-pill__label">School lunches</span>
+            </div>
+
+            <div class="impact-pill">
+              <span class="impact-pill__count" id="familyCount">0</span>
+              <span class="impact-pill__label">Artisan’s family</span>
+            </div>
+          </section>
+        </aside>
+      </div>
+    </section>
+  </main>
+
+  <footer class="sitefooter">
+    <div class="wrap foot">
+      <div class="foot__col">
+        <div class="foot__brand">
+          <img src="images/fyp_logo.png" alt="" class="foot__logo">
+          <strong>CareChannels</strong>
+        </div>
+        <p class="foot__p">A marketplace that turns every purchase into measurable impact for communities across Asia.</p>
+      </div>
+
+      <div class="foot__col">
+        <div class="foot__h">Programs</div>
+        <a href="#" class="foot__a" onclick="comingSoon(event)">Livelihood</a>
+        <a href="#" class="foot__a" onclick="comingSoon(event)">Education</a>
+        <a href="#" class="foot__a" onclick="comingSoon(event)">Healthcare</a>
+      </div>
+
+      <div class="foot__col">
+        <div class="foot__h">Resources</div>
+        <a href="sponsor.html" class="foot__a">Sponsorships</a>
+        <a href="#" class="foot__a" onclick="comingSoon(event)">Impact Reports</a>
+        <a href="#" class="foot__a" onclick="comingSoon(event)">Volunteer</a>
+      </div>
+
+      <div class="foot__col">
+        <div class="foot__h">Connect</div>
+        <a href="#" class="foot__a" onclick="comingSoon(event)">Instagram</a>
+        <a href="#" class="foot__a" onclick="comingSoon(event)">LinkedIn</a>
+        <a href="#" class="foot__a" onclick="comingSoon(event)">Email</a>
+      </div>
+    </div>
+
+    <div class="wrap foot__bar">
+      <small>© 2025 CareChannels International</small>
+    </div>
+  </footer>
+
+  <script>
+    const BASKET_KEY = 'cciBasket';
+    const ORDER_NOTE_KEY = 'cciOrderNote';
+    const SHIPPING = 5;
+
+    function comingSoon(e){
+      if (e && typeof e.preventDefault === 'function') {
+        e.preventDefault();
+      }
+      alert('This section is coming soon.');
+    }
+
+    function getBasket(){
+      try{
+        return JSON.parse(localStorage.getItem(BASKET_KEY)) || [];
+      }catch(err){
+        return [];
+      }
+    }
+
+    function saveBasket(items){
+      localStorage.setItem(BASKET_KEY, JSON.stringify(items));
+    }
+
+    function formatMoney(value){
+      return '$' + value.toFixed(0);
+    }
+
+    function updateBasketBadge(){
+      const badge = document.getElementById('basketBadge');
+      const count = getBasket().reduce((sum, item) => sum + item.qty, 0);
+      badge.textContent = count;
+      badge.classList.toggle('is-visible', count > 0);
+    }
+
+    function renderBasket(){
+      const basket = getBasket();
+      const basketItems = document.getElementById('basketItems');
+      const subtotalValue = document.getElementById('subtotalValue');
+      const shippingValue = document.getElementById('shippingValue');
+      const totalValue = document.getElementById('totalValue');
+      const lunchCount = document.getElementById('lunchCount');
+      const familyCount = document.getElementById('familyCount');
+
+      basketItems.innerHTML = '';
+
+      if (!basket.length) {
+        basketItems.innerHTML = `
+          <div class="basket-empty">
+            <p>Your basket is empty.</p>
+            <a href="products_thiri.html" class="basket-empty__link">Continue shopping</a>
+          </div>
+        `;
+      } else {
+        basket.forEach((item, index) => {
+          const row = document.createElement('div');
+          row.className = 'basket-row';
+          row.innerHTML = `
+            <div class="basket-row__imageWrap">
+              <img src="${item.image}" alt="${item.name}" class="basket-row__image">
+            </div>
+
+            <div class="basket-row__item">
+              <h3 class="basket-row__title">${item.name}</h3>
+              <p class="basket-row__sub">${item.subtitle}</p>
+            </div>
+
+            <div class="basket-row__qty">x${item.qty}</div>
+
+            <div class="basket-row__price">${formatMoney(item.price * item.qty)}</div>
+          `;
+          basketItems.appendChild(row);
+
+          if (index !== basket.length - 1) {
+            const divider = document.createElement('div');
+            divider.className = 'basket-divider';
+            basketItems.appendChild(divider);
+          }
+        });
+      }
+
+      const subtotal = basket.reduce((sum, item) => sum + (item.price * item.qty), 0);
+      const shipping = basket.length ? SHIPPING : 0;
+      const total = subtotal + shipping;
+      const totalQty = basket.reduce((sum, item) => sum + item.qty, 0);
+
+      subtotalValue.textContent = formatMoney(subtotal);
+      shippingValue.textContent = formatMoney(shipping);
+      totalValue.textContent = formatMoney(total);
+
+      lunchCount.textContent = totalQty * 2;
+      familyCount.textContent = basket.length ? 1 : 0;
+
+      updateBasketBadge();
+    }
+
+    const orderNote = document.getElementById('orderNote');
+    orderNote.value = localStorage.getItem(ORDER_NOTE_KEY) || '';
+    orderNote.addEventListener('input', function(){
+      localStorage.setItem(ORDER_NOTE_KEY, this.value);
+    });
+
+    
+document.getElementById('checkoutBtn').addEventListener('click', function(){
+  const basket = getBasket();
+
+  if (!basket.length) {
+    alert('Your basket is empty. Please add an item before checking out.');
+    return;
+  }
+
+  const now = new Date();
+  const year = now.getFullYear();
+  const randomPart = Math.floor(1000 + Math.random() * 9000);
+  const orderNumber = `#CCI-${year}-${randomPart}`;
+
+  localStorage.setItem('cciLastOrder', JSON.stringify({
+    orderNumber,
+    createdAt: now.toISOString(),
+    items: basket
+  }));
+
+  localStorage.setItem('cciBasket', JSON.stringify([]));
+  localStorage.removeItem('cciOrderNote');
+
+  window.location.href = 'confirm.html';
+});
+
+
+    (function () {
+      const topbar = document.getElementById('topbar');
+      const onScroll = () => {
+        if (window.scrollY > 8) {
+          topbar.classList.add('is-scrolled');
+        } else {
+          topbar.classList.remove('is-scrolled');
+        }
+      };
+
+      document.addEventListener('scroll', onScroll, { passive: true });
+      onScroll();
+      renderBasket();
+    })();
+  </script>
+</body>
+</html>

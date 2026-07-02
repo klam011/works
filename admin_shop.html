@@ -1,0 +1,339 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>CCI Admin – Shop / Products</title>
+  <link rel="icon" href="images/fyp_logo.png" type="image/png" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=Zalando+Sans+SemiExpanded:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="admin.css" />
+</head>
+<body>
+  <header class="topbar" id="topbar" role="navigation" aria-label="Top">
+    <div class="wrap topbar__inner">
+      <nav class="nav" aria-label="Primary">
+        <div class="nav__left">
+          <a class="navlink" href="admin_dashboard.html">Dashboard</a>
+          <a class="navlink navlink--active" href="admin_shop.html">Shop</a>
+        </div>
+
+        <a class="navbrand" href="admin_dashboard.html" aria-label="Care Channels Admin">
+          <span class="navbrand__main">Care Channels</span>
+          <span class="navbrand__sub">Admin</span>
+        </a>
+
+        <div class="nav__rightWrap">
+          <div class="nav__right">
+            <a class="navlink" href="admin_sponsor.html">Sponsor</a>
+            <a class="navlink" href="admin_metrics.html">Impact</a>
+          </div>
+
+          <a class="navicon" href="admin_login.html" aria-label="Logout">
+            <svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true">
+              <path fill="currentColor" d="M10 17l1.41-1.41L8.83 13H20v-2H8.83l2.58-2.59L10 7l-5 5 5 5zm-6 3h8v-2H4V6h8V4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2z"/>
+            </svg>
+          </a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <section class="adminHero">
+    <div class="wrap adminHero__inner">
+      <p class="adminHero__eyebrow">Product Management</p>
+      <h1 class="adminHero__title">Manage Products</h1>
+      <p class="adminHero__sub">Manage products, media, and artisan-linked content shown in the public shop.</p>
+    </div>
+  </section>
+
+  <main class="adminPage">
+    <div class="wrap">
+      <div class="adminShell">
+        <aside class="sidebar" aria-label="Admin navigation">
+          <div class="side__top">
+            <p class="side__title nunito-sans">Manage</p>
+            <h2 class="side__org zalando-sans">Shop / Products</h2>
+          </div>
+
+          <nav class="side__nav">
+            <a class="side__a" href="admin_dashboard.html">Dashboard</a>
+            <a class="side__a is-active" href="admin_shop.html">Shop / Products</a>
+            <a class="side__a" href="admin_sponsor.html">Sponsorships</a>
+            <a class="side__a" href="admin_metrics.html">Impact Metrics</a>
+          </nav>
+        </aside>
+
+        <section class="main" aria-label="Shop admin content">
+          <section class="card">
+            <div class="card__hd">
+              <h2 class="card__title">Product List</h2>
+              <p class="card__sub">Search, filter, and update products shown on the public shop.</p>
+            </div>
+
+            <div class="card__bd">
+              <div class="filters">
+                
+                  <select class="select" id="status">
+                    <option value="">All Status</option>
+                    <option value="live">Live</option>
+                    <option value="draft">Draft</option>
+                    <option value="archived">Archived</option>
+                  </select>
+
+                  <select class="select" id="status">
+                    <option value="">All Islands</option>
+                    <option value="live">Textiles</option>
+                    <option value="draft">Baskets</option>
+                    <option value="archived">Aroma Care</option>
+                  </select>
+
+                  <button class="btn btn--ghost" type="button" onclick="resetFilters()">Reset</button>
+                </div>
+              </div>
+
+              <div style="height:14px"></div>
+
+              <div class="tableWrap" aria-label="Products table">
+                <table class="table" id="productsTable">
+                  <thead>
+                    <tr>
+                      <th>Product</th>
+                      <th>Island</th>
+                      <th>Price</th>
+                      <th>Linked Artisan</th>
+                      <th>Media</th>
+                      <th>Status</th>
+                      <th style="min-width:180px;">Actions</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td><strong>Hand-woven Scarf</strong><br><span class="hint">SKU: TX-001</span></td>
+                      <td>Textiles</td>
+                      <td>$15</td>
+                      <td>Maria D.</td>
+                      <td>3 images, 1 video</td>
+                      <td><span class="badge badge--on">Live</span></td>
+                      <td class="row">
+                        <button class="btn btn--ghost" type="button" onclick="prefill('Hand-woven Scarf','Textiles','$15','Maria D.','TX-001')">Edit</button>
+                        <button class="btn btn--danger" type="button" onclick="alert('Archived.')">Archive</button>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td><strong>Market Basket</strong><br><span class="hint">SKU: BK-007</span></td>
+                      <td>Baskets</td>
+                      <td>$22</td>
+                      <td>Alvin K.</td>
+                      <td>2 images</td>
+                      <td><span class="badge badge--on">Live</span></td>
+                      <td class="row">
+                        <button class="btn btn--ghost" type="button" onclick="prefill('Market Basket','Baskets','$22','Alvin K.','BK-007')">Edit</button>
+                        <button class="btn btn--danger" type="button" onclick="alert('Archived.')">Archive</button>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td><strong>Herbal Balm</strong><br><span class="hint">SKU: AR-003</span></td>
+                      <td>Aroma Care</td>
+                      <td>$12</td>
+                      <td>Lea P.</td>
+                      <td>1 image</td>
+                      <td><span class="badge badge--draft">Draft</span></td>
+                      <td class="row">
+                        <button class="btn btn--ghost" type="button" onclick="prefill('Herbal Balm','Aroma Care','$12','Lea P.','AR-003')">Edit</button>
+                        <button class="btn btn--danger" type="button" onclick="alert('PArchived.')">Archive</button>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+
+              
+            </div>
+          </section>
+
+          <section class="card sectionGap">
+            <div class="card__hd">
+              <h2 class="card__title">Product Details</h2>
+              <p class="card__sub">Use this form to add a new product or update an existing one.</p>
+            </div>
+
+            <div class="card__bd">
+              <form id="productForm" method="post" action="#" enctype="multipart/form-data">
+                <div class="formGrid">
+                  <div class="field">
+                    <label class="label" for="p_name">Product Name</label>
+                    <input class="input" id="p_name" name="p_name" placeholder="e.g., Hand-woven Scarf" required />
+                  </div>
+
+                  <div class="field">
+                    <label class="label" for="p_sku">SKU</label>
+                    <input class="input" id="p_sku" name="p_sku" placeholder="e.g., TX-001" />
+                  </div>
+
+                  <div class="field">
+                    <label class="label" for="p_island">Island Category</label>
+                    <select class="select" id="p_island" name="p_island" required>
+                      <option value="">Select island…</option>
+                      <option>Textiles</option>
+                      <option>Baskets</option>
+                      <option>Aroma Care</option>
+                    </select>
+                  </div>
+
+                  <div class="field">
+                    <label class="label" for="p_price">Price</label>
+                    <input class="input" id="p_price" name="p_price" placeholder="$15" />
+                  </div>
+
+                  <div class="field">
+                    <label class="label" for="p_artisan">Linked Artisan</label>
+                    <select class="select" id="p_artisan" name="p_artisan">
+                      <option value="">(Optional) Select artisan…</option>
+                      <option>Maria D.</option>
+                      <option>Alvin K.</option>
+                      <option>Lea P.</option>
+                    </select>
+                    <div class="hint"></div>
+                  </div>
+
+                  <div class="field">
+                    <label class="label" for="p_status">Status</label>
+                    <select class="select" id="p_status" name="p_status">
+                      <option value="live">Live</option>
+                      <option value="draft">Draft</option>
+                      <option value="archived">Archived</option>
+                    </select>
+                  </div>
+
+                  <div class="field" style="grid-column:1 / -1;">
+                    <label class="label" for="p_desc">Description</label>
+                    <textarea class="textarea" id="p_desc" name="p_desc" placeholder="Short description shown on the product page…"></textarea>
+                  </div>
+
+                  <div class="field">
+                    <label class="label" for="p_img">Upload Images</label>
+                    <input class="input" id="p_img" name="p_img[]" type="file" accept="image/*" multiple />
+                    <div class="hint"></div>
+                  </div>
+
+                  <div class="field">
+                    <label class="label" for="p_vid">Upload BTS Video</label>
+                    <input class="input" id="p_vid" name="p_vid" type="file" accept="video/*" />
+                    <div class="hint"></div>
+                  </div>
+                </div>
+
+                <div class="row" style="margin-top:14px; justify-content:flex-end;">
+                  <button class="btn btn--ghost" type="button" onclick="clearForm()">Clear</button>
+                  <button class="btn" type="submit" onclick="event.preventDefault(); alert('Product Added.');">Save Product</button>
+                </div>
+              </form>
+            </div>
+          </section>
+        </section>
+      </div>
+    </div>
+  </main>
+
+  <footer class="sitefooter">
+    <div class="wrap foot">
+      <div>
+        <div class="foot__brand">
+          <img src="images/fyp_logo.png" alt="" class="foot__logo">
+          <strong>CareChannels</strong>
+        </div>
+        <p class="foot__p">Administrative portal for shop, sponsorship, and impact management.</p>
+      </div>
+
+      <div>
+        <div class="foot__h">Manage</div>
+        <a class="foot__a" href="admin_shop.html">Products</a>
+        <a class="foot__a" href="admin_sponsor.html">Sponsorships</a>
+      </div>
+
+      <div>
+        <div class="foot__h">Tracking</div>
+        <a class="foot__a" href="admin_metrics.html">Impact Metrics</a>
+        <a class="foot__a" href="admin_dashboard.html">Activity</a>
+      </div>
+
+      <div>
+        <div class="foot__h">Public Pages</div>
+        <a class="foot__a" href="shop.html">Shop</a>
+        <a class="foot__a" href="sponsor.html">Sponsor</a>
+      </div>
+    </div>
+
+    <div class="wrap foot__bar">
+      <small>© 2025 CareChannels International</small>
+    </div>
+  </footer>
+
+  <script>
+    const topbar = document.getElementById('topbar');
+
+    function handleScroll() {
+      if (window.scrollY > 10) {
+        topbar.classList.add('is-scrolled');
+      } else {
+        topbar.classList.remove('is-scrolled');
+      }
+    }
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    window.addEventListener('load', handleScroll);
+
+    const q = document.getElementById('q');
+    const cat = document.getElementById('cat');
+    const status = document.getElementById('status');
+    const table = document.getElementById('productsTable');
+
+    function applyFilters(){
+      const query = (q.value || '').toLowerCase();
+      const c = cat.value;
+      const s = status.value;
+
+      [...table.tBodies[0].rows].forEach(r => {
+        const text = r.innerText.toLowerCase();
+        const island = r.cells[1].innerText.trim();
+        const badge = r.cells[5].innerText.toLowerCase();
+        const okQ = !query || text.includes(query);
+        const okC = !c || island === c;
+        const okS = !s || badge.includes(s);
+        r.style.display = (okQ && okC && okS) ? '' : 'none';
+      });
+    }
+
+    q.addEventListener('input', applyFilters);
+    cat.addEventListener('change', applyFilters);
+    status.addEventListener('change', applyFilters);
+
+    function resetFilters(){
+      q.value = '';
+      cat.value = '';
+      status.value = '';
+      applyFilters();
+    }
+
+    function prefill(name, island, price, artisan, sku){
+      document.getElementById('p_name').value = name;
+      document.getElementById('p_island').value = island;
+      document.getElementById('p_price').value = price;
+      document.getElementById('p_artisan').value = artisan;
+      document.getElementById('p_sku').value = sku;
+      window.scrollTo({
+        top: document.getElementById('productForm').offsetTop - 120,
+        behavior: 'smooth'
+      });
+    }
+
+    function clearForm(){
+      document.getElementById('productForm').reset();
+    }
+  </script>
+</body>
+</html>

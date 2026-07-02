@@ -1,0 +1,924 @@
+:root{
+  --green:#155623;
+  --green-deep:#123f1b;
+  --beige:#eae9d1;
+  --beige-2:#d9d7bf;
+  --paper:#ffffff;
+  --card:#f7f6ea;
+  --ink:#0f172a;
+  --ink-soft:#4b5563;
+  --muted:#64748b;
+  --line:rgba(15,23,42,.10);
+  --shadow:0 14px 28px rgba(0,0,0,.08);
+}
+
+*{box-sizing:border-box}
+html,body{height:100%}
+
+body{
+  margin:0;
+  color:var(--ink);
+  background:#ffffff;
+  font-family:"Nunito Sans", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  overflow-x:hidden;
+  padding-top:72px;
+}
+
+img{max-width:100%; display:block}
+button,input,textarea,select{font:inherit}
+
+.wrap{
+  max-width:1100px;
+  margin:auto;
+  padding:0 22px;
+}
+
+.zalando{
+  font-family:"Zalando Sans SemiExpanded", sans-serif;
+  font-weight:800;
+  letter-spacing:.2px;
+}
+
+.nunito{
+  font-family:"Nunito Sans", sans-serif;
+}
+
+.muted{color:var(--muted)}
+
+/* ===== topbar ===== */
+.topbar{
+  position:fixed;
+  inset:0 0 auto 0;
+  height:72px;
+  z-index:100;
+  background:rgba(234,233,209,.82);
+  transition:
+    background .25s ease,
+    box-shadow .25s ease,
+    backdrop-filter .25s ease,
+    -webkit-backdrop-filter .25s ease,
+    border-color .25s ease;
+  backdrop-filter:blur(10px) saturate(140%);
+  -webkit-backdrop-filter:blur(10px) saturate(140%);
+  border-bottom:1px solid rgba(255,255,255,.25);
+}
+
+.topbar.is-scrolled{
+  background:rgba(234,233,209,.82);
+  box-shadow:0 10px 24px rgba(0,0,0,.08);
+}
+
+.topbar__inner{
+  height:72px;
+  display:flex;
+  align-items:center;
+}
+
+.nav{
+  display:grid;
+  grid-template-columns:1fr auto 1fr;
+  align-items:center;
+  width:100%;
+  padding:0 28px;
+}
+
+.nav__left{
+  display:flex;
+  align-items:center;
+  gap:80px;
+  justify-self:stretch;
+  justify-content:flex-end;
+  padding-right:100px;
+}
+
+.navbrand{
+  justify-self:center;
+  text-align:center;
+  line-height:1.05;
+  font-family:"Zalando Sans SemiExpanded",sans-serif;
+  color:rgba(15,23,42,.95);
+  text-decoration:none;
+}
+
+.navbrand__main{
+  display:block;
+  font-weight:900;
+  font-size:18px;
+}
+
+.navbrand__sub{
+  display:block;
+  font-weight:700;
+  font-size:14px;
+  opacity:.92;
+  margin-top:2px;
+}
+
+.nav__rightWrap{
+  justify-self:stretch;
+  display:flex;
+  align-items:center;
+  justify-content:flex-start;
+  padding-left:100px;
+  width:100%;
+}
+
+.nav__right{
+  display:flex;
+  align-items:center;
+  gap:50px;
+}
+
+.nav .navlink{
+  display:inline-block;
+  font-family:"Zalando Sans SemiExpanded",sans-serif;
+  font-weight:700;
+  font-size:15px;
+  color:rgba(15,23,42,.72);
+  text-decoration:none;
+  padding:10px 2px;
+  transition:transform .16s ease, text-shadow .18s ease, color .18s ease;
+}
+
+.nav .navlink:hover{
+  transform:translateY(-2px);
+  text-shadow:0 10px 18px rgba(0,0,0,.18);
+  color:var(--green);
+}
+
+.nav .navlink--active{
+  color:rgba(21,86,35,.72);
+}
+
+.navicon{
+  margin-left:auto;
+  width:46px;
+  height:46px;
+  border-radius:999px;
+  color:rgba(15,23,42,.82);
+  text-decoration:none;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  transition:transform .16s ease, filter .18s ease, color .18s ease;
+}
+
+.navicon:hover{
+  transform:translateY(-2px);
+  filter:drop-shadow(0 10px 16px rgba(0,0,0,.18));
+  color:var(--green);
+}
+
+/* ===== shared blocks ===== */
+.portalHero{
+  background:#155623;
+  color:#fff;
+}
+
+.portalHero__inner{
+  padding:28px 0 30px;
+}
+
+.portalHero__eyebrow{
+  margin:0 0 6px;
+  font-size:13px;
+  font-weight:800;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+  color:rgba(255,255,255,.82);
+}
+
+.portalHero__title{
+  margin:0 0 8px;
+  font-family:"Zalando Sans SemiExpanded",sans-serif;
+  font-weight:900;
+  font-size:clamp(28px, 3vw, 42px);
+  line-height:1.08;
+}
+
+.portalHero__sub{
+  margin:0;
+  max-width:760px;
+  color:rgba(255,255,255,.92);
+  font-size:15px;
+  font-weight:600;
+  line-height:1.5;
+}
+
+.portalPage{
+  background:#ffffff;
+  padding:26px 0 40px;
+}
+
+.card{
+  background:#ffffff;
+  border:1px solid var(--line);
+  border-radius:22px;
+  overflow:hidden;
+}
+
+.card--soft{
+  background:#f7f6ea;
+}
+
+.card__hd{
+  padding:18px 20px 0;
+}
+
+.card__bd{
+  padding:18px 20px 20px;
+}
+
+.cardTitle{
+  margin:0;
+  font-family:"Zalando Sans SemiExpanded", sans-serif;
+  font-weight:800;
+  font-size:24px;
+  color:var(--green);
+}
+
+.cardSub{
+  margin:6px 0 0;
+  color:var(--ink-soft);
+  font-weight:600;
+  line-height:1.45;
+}
+
+.sectionGap{margin-top:16px}
+
+.btn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  min-height:46px;
+  padding:0 18px;
+  border-radius:14px;
+  border:0;
+  background:var(--green);
+  color:#fff;
+  text-decoration:none;
+  cursor:pointer;
+  font-family:"Zalando Sans SemiExpanded",sans-serif;
+  font-size:14px;
+  font-weight:800;
+  transition:transform .15s ease, filter .18s ease, background .18s ease;
+}
+
+.btn:hover{
+  transform:translateY(-2px);
+  filter:drop-shadow(0 8px 14px rgba(0,0,0,.12));
+  background:var(--green-deep);
+}
+
+.btn--ghost{
+  background:#ffffff;
+  color:var(--green);
+  border:1.5px solid rgba(21,86,35,.20);
+}
+
+.btn--ghost:hover{
+  background:#f7f6ea;
+  color:var(--green);
+}
+
+.field{
+  display:flex;
+  flex-direction:column;
+  gap:6px;
+}
+
+.label{
+  font-weight:900;
+  color:#223042;
+}
+
+.input,
+.textarea{
+  width:100%;
+  min-height:48px;
+  border:1px solid rgba(15,23,42,.14);
+  border-radius:14px;
+  background:#fff;
+  padding:12px 14px;
+  color:var(--ink);
+  outline:none;
+  transition:border-color .18s ease, box-shadow .18s ease;
+}
+
+.textarea{
+  min-height:138px;
+  resize:vertical;
+}
+
+.input:focus,
+.textarea:focus{
+  border-color:rgba(21,86,35,.34);
+  box-shadow:0 0 0 4px rgba(21,86,35,.08);
+}
+
+.hint{
+  font-size:12px;
+  line-height:1.4;
+  color:#6b7280;
+}
+
+.row{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  flex-wrap:wrap;
+}
+
+.between{justify-content:space-between}
+
+/* ===== login ===== */
+.loginPage{
+  min-height:calc(100vh - 72px);
+  display:grid;
+  place-items:center;
+  padding:32px 22px 40px;
+  background:#ffffff;
+}
+
+.loginCard{
+  width:100%;
+  max-width:580px;
+  background:#f7f6ea;
+  border:1px solid var(--line);
+  border-radius:24px;
+  padding:24px;
+}
+
+.loginHead{
+  display:flex;
+  gap:14px;
+  align-items:center;
+  margin-bottom:14px;
+}
+
+.loginLogo{
+  width:48px;
+  height:48px;
+  object-fit:contain;
+}
+
+.loginTitle{
+  margin:0 0 4px;
+  color:var(--green);
+  font-size:30px;
+}
+
+.loginSub{
+  margin:0;
+  color:#5b6473;
+  font-weight:600;
+  line-height:1.45;
+}
+
+.grid2{
+  display:grid;
+  grid-template-columns:1fr;
+  gap:14px;
+}
+
+/* ===== sponsor dashboard ===== */
+.tierSummary{
+  display:grid;
+  grid-template-columns:1.15fr .85fr;
+  gap:16px;
+}
+
+.heroIntro{
+  background:#f7f6ea;
+  border:1px solid rgba(21,86,35,.12);
+  border-radius:22px;
+  padding:22px;
+}
+
+.heroTitle{
+  margin:0;
+  font-family:"Zalando Sans SemiExpanded", sans-serif;
+  font-weight:900;
+  font-size:clamp(26px, 2.6vw, 36px);
+  color:var(--green);
+  line-height:1.1;
+}
+
+.heroDesc{
+  margin:10px 0 0;
+  color:#4b5563;
+  font-weight:600;
+  line-height:1.5;
+}
+
+.chipRow{
+  display:flex;
+  flex-wrap:wrap;
+  gap:10px;
+  margin-top:14px;
+}
+
+.chip{
+  display:inline-flex;
+  align-items:center;
+  gap:6px;
+  min-height:36px;
+  padding:0 12px;
+  border-radius:999px;
+  background:rgba(21,86,35,.08);
+  border:1px solid rgba(21,86,35,.14);
+  font-weight:800;
+  color:#223042;
+}
+
+.miniStats{
+  display:grid;
+  gap:16px;
+}
+
+.miniCard{
+  background:#ffffff;
+  border:1px solid var(--line);
+  border-radius:22px;
+  padding:18px;
+}
+
+.miniLabel{
+  margin:0;
+  color:#5b6473;
+  font-weight:800;
+}
+
+.miniBig{
+  margin:8px 0 6px;
+  font-family:"Zalando Sans SemiExpanded", sans-serif;
+  font-weight:900;
+  font-size:30px;
+  line-height:1;
+  color:var(--green);
+}
+
+.miniNote{
+  margin:0;
+  color:#6b7280;
+  font-weight:600;
+  line-height:1.4;
+}
+
+.tierGrid{
+  display:grid;
+  grid-template-columns:1.1fr .9fr;
+  gap:16px;
+  margin-top:16px;
+}
+
+.stack{
+  display:grid;
+  gap:16px;
+  align-content:start;
+}
+
+/* timeline */
+.timeline{
+  padding-top:2px;
+}
+
+.progress{
+  height:10px;
+  border-radius:999px;
+  background:rgba(21,86,35,.10);
+  border:1px solid rgba(21,86,35,.14);
+  overflow:hidden;
+}
+
+.progress__bar{
+  height:100%;
+  width:55%;
+  background:var(--green);
+  border-radius:999px;
+}
+
+.milestones{
+  margin-top:16px;
+  display:grid;
+  grid-template-columns:repeat(6,minmax(0,1fr));
+  gap:10px;
+}
+
+.ms{
+  padding:12px;
+  border-radius:16px;
+  border:1px solid rgba(15,23,42,.08);
+  background:#fff;
+}
+
+.ms .dot{
+  width:12px;
+  height:12px;
+  border-radius:999px;
+  background:rgba(100,116,139,.35);
+  margin-bottom:8px;
+}
+
+.ms__t{
+  font-family:"Zalando Sans SemiExpanded", sans-serif;
+  font-weight:800;
+  font-size:14px;
+  color:#223042;
+}
+
+.ms__p{
+  margin-top:4px;
+  font-size:12px;
+  color:#6b7280;
+  font-weight:600;
+  line-height:1.35;
+}
+
+.ms.is-done{
+  background:rgba(21,86,35,.06);
+  border-color:rgba(21,86,35,.16);
+}
+
+.ms.is-done .dot{
+  background:var(--green);
+}
+
+.ms.is-now{
+  border-color:rgba(21,86,35,.22);
+  box-shadow:0 8px 18px rgba(21,86,35,.08);
+}
+
+.ms.is-now .dot{
+  background:var(--green);
+}
+
+/* updates */
+.updates{
+  display:grid;
+  gap:12px;
+}
+
+.update{
+  background:#ffffff;
+  border:1px solid rgba(15,23,42,.08);
+  border-radius:18px;
+  padding:16px;
+}
+
+.update__meta{
+  font-size:12px;
+  color:#6b7280;
+  font-weight:700;
+}
+
+.update__t{
+  margin:8px 0 6px;
+  font-family:"Zalando Sans SemiExpanded", sans-serif;
+  font-weight:800;
+  font-size:18px;
+  color:var(--green);
+}
+
+.update__p{
+  margin:0;
+  color:#4b5563;
+  font-weight:600;
+  line-height:1.5;
+}
+
+.update__row{
+  margin-top:12px;
+  display:flex;
+  gap:10px;
+  flex-wrap:wrap;
+}
+
+/* profile */
+.childCard{
+  display:flex;
+  gap:14px;
+  align-items:flex-start;
+}
+
+.avatar{
+  width:58px;
+  height:58px;
+  border-radius:18px;
+  background:rgba(21,86,35,.10);
+  border:1px solid rgba(21,86,35,.14);
+}
+
+.tagRow{
+  display:flex;
+  gap:8px;
+  flex-wrap:wrap;
+  margin-top:10px;
+}
+
+.tag{
+  padding:6px 10px;
+  border-radius:999px;
+  background:#f7f6ea;
+  border:1px solid rgba(15,23,42,.08);
+  font-size:12px;
+  font-weight:800;
+  color:#223042;
+}
+
+.divider{
+  height:1px;
+  background:rgba(15,23,42,.08);
+  margin:16px 0;
+}
+
+.twoCol{
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:14px;
+}
+
+/* toast */
+.toast{
+  margin-top:12px;
+  padding:12px 14px;
+  border-radius:14px;
+  background:rgba(21,86,35,.08);
+  border:1px solid rgba(21,86,35,.16);
+  color:#223042;
+  font-weight:800;
+  display:none;
+}
+
+.toast.show{
+  display:block;
+}
+
+/* footer */
+.sitefooter{
+  background:#d9d7bf;
+  color:#2b2b2b;
+}
+
+.foot{
+  display:grid;
+  grid-template-columns:2fr 1fr 1fr 1fr;
+  gap:18px;
+  padding:28px 0;
+}
+
+.foot__brand{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  font-family:"Zalando Sans SemiExpanded",sans-serif;
+}
+
+.foot__logo{
+  width:28px;
+  height:28px;
+  object-fit:contain;
+}
+
+.foot__p{
+  margin:10px 0 0;
+  color:#2b2b2b;
+  line-height:1.45;
+}
+
+.foot__h{
+  margin-bottom:8px;
+  color:#1f1f1f;
+  font-weight:900;
+}
+
+.foot__a{
+  display:block;
+  margin:6px 0;
+  color:#2b2b2b;
+  text-decoration:none;
+}
+
+.foot__a:hover{
+  color:var(--green);
+}
+
+.foot__bar{
+  padding:0 0 20px;
+  color:#4a4a4a;
+  text-align:center;
+}
+
+@media (max-width:980px){
+  .nav{
+    grid-template-columns:1fr;
+    gap:10px;
+    padding:12px 0;
+  }
+
+  .nav__left,
+  .nav__rightWrap{
+    justify-content:center;
+    padding:0;
+  }
+
+  .nav__rightWrap{
+    justify-content:center;
+  }
+
+  .navicon{
+    margin-left:18px;
+  }
+
+  .tierSummary,
+  .tierGrid{
+    grid-template-columns:1fr;
+  }
+
+  .milestones{
+    grid-template-columns:repeat(2,minmax(0,1fr));
+  }
+
+  .twoCol{
+    grid-template-columns:1fr;
+  }
+
+  .foot{
+    grid-template-columns:1fr 1fr;
+  }
+}
+
+@media (max-width:640px){
+  body{
+    padding-top:68px;
+  }
+
+  .topbar__inner{
+    height:68px;
+  }
+
+  .wrap{
+    padding:0 16px;
+  }
+
+  .foot{
+    grid-template-columns:1fr;
+  }
+
+  .loginCard{
+    padding:20px 18px;
+  }
+}
+/* ===== profile image ===== */
+.profilePhoto{
+  width:92px;
+  height:92px;
+  object-fit:cover;
+  border-radius:22px;
+  background:#f3f1df;
+  border:1px solid rgba(21,86,35,.14);
+  box-shadow:0 8px 16px rgba(0,0,0,.06);
+  flex-shrink:0;
+}
+
+/* ===== diary modal ===== */
+.diaryModal{
+  position:fixed;
+  inset:0;
+  z-index:300;
+  display:none;
+}
+
+.diaryModal.is-open{
+  display:block;
+}
+
+.diaryBackdrop{
+  position:absolute;
+  inset:0;
+  background:rgba(15,23,42,.42);
+  backdrop-filter:blur(4px);
+  -webkit-backdrop-filter:blur(4px);
+}
+
+.diaryPanel{
+  position:relative;
+  width:min(960px, calc(100vw - 32px));
+  max-height:calc(100vh - 48px);
+  margin:24px auto;
+  background:#f7f6ea;
+  border:1px solid rgba(15,23,42,.08);
+  border-radius:26px;
+  overflow:auto;
+  box-shadow:0 24px 60px rgba(0,0,0,.18);
+  padding:24px;
+}
+
+.diaryClose{
+  position:absolute;
+  top:14px;
+  right:16px;
+  width:42px;
+  height:42px;
+  border:0;
+  border-radius:999px;
+  background:#ffffff;
+  color:var(--green);
+  font-size:28px;
+  line-height:1;
+  cursor:pointer;
+  box-shadow:0 8px 18px rgba(0,0,0,.08);
+}
+
+.diaryHead{
+  padding-right:52px;
+  margin-bottom:18px;
+}
+
+.diaryEyebrow{
+  margin:0 0 6px;
+  font-size:12px;
+  font-weight:800;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+  color:#6b7280;
+}
+
+.diaryTitle{
+  margin:0 0 8px;
+  font-size:clamp(24px, 2.4vw, 34px);
+  color:var(--green);
+}
+
+.diarySub{
+  margin:0;
+  color:#4b5563;
+  font-weight:600;
+  line-height:1.5;
+}
+
+.diaryPages{
+  display:grid;
+  grid-template-columns:repeat(2, minmax(0, 1fr));
+  gap:18px;
+  align-items:start;
+}
+
+.diaryPage{
+  background:#fffdf7;
+  border:1px solid rgba(15,23,42,.08);
+  border-radius:22px;
+  padding:14px;
+  box-shadow:0 10px 22px rgba(0,0,0,.05);
+  transform:rotate(-1deg);
+}
+
+.diaryPage:nth-child(2){
+  transform:rotate(1deg);
+}
+
+.diaryPhotoWrap{
+  background:#ffffff;
+  border-radius:16px;
+  overflow:hidden;
+  border:1px solid rgba(15,23,42,.06);
+}
+
+.diaryPhotoWrap img{
+  width:100%;
+  height:auto;
+  display:block;
+}
+
+.diaryCaption{
+  margin:12px 4px 2px;
+  color:#4b5563;
+  font-size:14px;
+  font-weight:600;
+  line-height:1.5;
+}
+
+@media (max-width:760px){
+  .profilePhoto{
+    width:78px;
+    height:78px;
+    border-radius:18px;
+  }
+
+  .diaryPanel{
+    width:min(100vw - 20px, 960px);
+    margin:10px auto;
+    max-height:calc(100vh - 20px);
+    padding:18px;
+    border-radius:20px;
+  }
+
+  .diaryPages{
+    grid-template-columns:1fr;
+  }
+
+  .diaryPage,
+  .diaryPage:nth-child(2){
+    transform:none;
+  }
+}

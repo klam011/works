@@ -1,0 +1,328 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>CCI Admin – Sponsorships</title>
+  <link rel="icon" href="images/fyp_logo.png" type="image/png" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=Zalando+Sans+SemiExpanded:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="admin.css" />
+</head>
+<body>
+  <header class="topbar" id="topbar" role="navigation" aria-label="Top">
+    <div class="wrap topbar__inner">
+      <nav class="nav" aria-label="Primary">
+        <div class="nav__left">
+          <a class="navlink" href="admin_dashboard.html">Dashboard</a>
+          <a class="navlink" href="admin_shop.html">Shop</a>
+        </div>
+
+        <a class="navbrand" href="admin_dashboard.html" aria-label="Care Channels Admin">
+          <span class="navbrand__main">Care Channels</span>
+          <span class="navbrand__sub">Admin</span>
+        </a>
+
+        <div class="nav__rightWrap">
+          <div class="nav__right">
+            <a class="navlink navlink--active" href="admin_sponsor.html">Sponsor</a>
+            <a class="navlink" href="admin_metrics.html">Impact</a>
+          </div>
+
+          <a class="navicon" href="admin_login.html" aria-label="Logout">
+            <svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true">
+              <path fill="currentColor" d="M10 17l1.41-1.41L8.83 13H20v-2H8.83l2.58-2.59L10 7l-5 5 5 5zm-6 3h8v-2H4V6h8V4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2z"/>
+            </svg>
+          </a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <section class="adminHero">
+    <div class="wrap adminHero__inner">
+      <p class="adminHero__eyebrow">Sponsorship Management</p>
+      <h1 class="adminHero__title">Manage Sponsorship Journeys</h1>
+      <p class="adminHero__sub">Control plans, child progress updates, and sponsor-facing content in one place while keeping the same warm and trustworthy CCI feel.</p>
+    </div>
+  </section>
+
+  <main class="adminPage">
+    <div class="wrap">
+      <div class="adminShell">
+        <aside class="sidebar" aria-label="Admin navigation">
+          <div class="side__top">
+            <p class="side__title nunito-sans">Manage</p>
+            <h2 class="side__org zalando-sans">Sponsorships</h2>
+          </div>
+
+          <nav class="side__nav">
+            <a class="side__a" href="admin_dashboard.html">Dashboard</a>
+            <a class="side__a" href="admin_shop.html">Shop / Products</a>
+            <a class="side__a is-active" href="admin_sponsor.html">Sponsorships</a>
+            <a class="side__a" href="admin_metrics.html">Impact Metrics</a>
+          </nav>
+        </aside>
+
+        <section class="main" aria-label="Sponsorship admin content">
+          <section class="card">
+            <div class="card__hd">
+              <h2 class="card__title">Sponsorship Plans</h2>
+              <p class="card__sub">Manage the plans shown publicly on the sponsorship page.</p>
+            </div>
+
+            <div class="card__bd">
+              <div class="tableWrap">
+                <table class="table" aria-label="Plans table">
+                  <thead>
+                    <tr>
+                      <th>Plan</th>
+                      <th>Monthly Amount</th>
+                      <th>Includes</th>
+                      <th>Status</th>
+                      <th style="min-width:170px;">Actions</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td><strong>Basic Support</strong></td>
+                      <td>$25</td>
+                      <td>School supplies + basic meals</td>
+                      <td><span class="badge badge--on">Live</span></td>
+                      <td class="row">
+                        <button class="btn btn--ghost" type="button" onclick="alert('Edit Completed.')">Edit</button>
+                        <button class="btn btn--danger" type="button" onclick="alert('Deactivation Completed.')">Disable</button>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td><strong>Growth Support</strong></td>
+                      <td>$40</td>
+                      <td>Tuition + healthcare + meals</td>
+                      <td><span class="badge badge--on">Live</span></td>
+                      <td class="row">
+                        <button class="btn btn--ghost" onclick="alert('Edit Completed.')">Edit</button>
+                        <button class="btn btn--danger" onclick="alert('Deactivation Completed.')">Disable</button>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td><strong>Full Support</strong></td>
+                      <td>$60</td>
+                      <td>Education, meals, healthcare, and added family support</td>
+                      <td><span class="badge badge--draft">Draft</span></td>
+                      <td class="row">
+                        <button class="btn btn--ghost" onclick="alert('Edit Completed.')">Edit</button>
+                        <button class="btn btn--danger" onclick="alert('Deactivation Completed.')">Disable</button>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+
+              <div class="row" style="margin-top:14px; justify-content:flex-end;">
+                <button class="btn" type="button" onclick="alert('Plan added.')">Add Plan</button>
+              </div>
+            </div>
+          </section>
+
+          <section class="card sectionGap">
+            <div class="card__hd">
+              <h2 class="card__title">Children & Progress Tracking</h2>
+              <p class="card__sub">Search for a child and update what sponsors will see in their journey view.</p>
+            </div>
+
+            <div class="card__bd">
+              <div class="filters">
+                <div class="search">
+                  <input class="input" id="childSearch" type="search" placeholder="Search child ID or name" />
+                </div>
+
+              
+              </div>
+
+              <div style="height:14px"></div>
+
+              <div class="tableWrap">
+                <table class="table" id="childrenTable" aria-label="Children journeys table">
+                  <thead>
+                    <tr>
+                      <th>Child</th>
+                      <th>Country</th>
+                      <th>Sponsor Status</th>
+                      <th>Last Update</th>
+                      <th>Next Milestone</th>
+                      <th style="min-width:180px;">Actions</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td><strong>CH-102</strong><br><span class="hint">Mia, 9</span></td>
+                      <td>Philippines</td>
+                      <td><span class="badge badge--on">Active</span></td>
+                      <td>2026-02-01</td>
+                      <td>Mid-term results</td>
+                      <td class="row">
+                        <button class="btn btn--ghost" type="button" onclick="selectChild('CH-102','Mia')">Upload Update</button>
+                        <button class="btn btn--danger" type="button" onclick="alert('Archived.')">Archive Profile</button>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td><strong>CH-088</strong><br><span class="hint">Jon, 11</span></td>
+                      <td>Thailand</td>
+                      <td><span class="badge badge--off">Paused</span></td>
+                      <td>2026-01-12</td>
+                      <td>Re-enrollment</td>
+                      <td class="row">
+                        <button class="btn btn--ghost" type="button" onclick="selectChild('CH-088','Jon')">Upload Update</button>
+                        <button class="btn btn--danger" type="button"onclick="alert('Archived.')">Archive Profile</button>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td><strong>CH-041</strong><br><span class="hint">Ayu, 10</span></td>
+                      <td>Indonesia</td>
+                      <td><span class="badge badge--on">Active</span></td>
+                      <td>2025-12-29</td>
+                      <td>Monthly photo update</td>
+                      <td class="row">
+                        <button class="btn btn--ghost" type="button" onclick="selectChild('CH-041','Ayu')">Upload Update</button>
+                        <button class="btn btn--danger" type="button"onclick="alert('Archived.')">Archive Profile</button>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+
+            </div>
+          </section>
+
+          <section class="card sectionGap">
+            <div class="card__hd">
+              <h2 class="card__title">Upload Monthly Update</h2>
+              <p class="card__sub">This update will later appear in the sponsor portal for the selected child.</p>
+            </div>
+
+            <div class="card__bd">
+              <form id="updateForm" method="post" action="#" enctype="multipart/form-data">
+                <div class="formGrid">
+                  <div class="field">
+                    <label class="label" for="u_child">Child ID</label>
+                    <input class="input" id="u_child" name="u_child" placeholder="Select from table above…" required />
+                  </div>
+
+                  <div class="field">
+                    <label class="label" for="u_month">Milestone Title</label>
+                    <input class="input" id="u_month" name="u_month" placeholder="e.g., Month 3: Health Check" required />
+                  </div>
+
+                  <div class="field" style="grid-column:1 / -1;">
+                    <label class="label" for="u_text">Update Summary</label>
+                    <textarea class="textarea" id="u_text" name="u_text" placeholder="Write an update for sponsors ..."></textarea>
+                  </div>
+
+                  <div class="field">
+                    <label class="label" for="u_photo">Upload Photo</label>
+                    <input class="input" id="u_photo" name="u_photo" type="file" accept="image/*" />
+                  </div>
+
+                  <div class="field">
+                    <label class="label" for="u_file">Upload Attachment</label>
+                    <input class="input" id="u_file" name="u_file" type="file" />
+                  </div>
+                </div>
+
+                <div class="row" style="margin-top:14px; justify-content:flex-end;">
+                  <button class="btn btn--ghost" type="button" onclick="document.getElementById('updateForm').reset();">Clear</button>
+                  <button class="btn" type="submit" onclick="event.preventDefault(); alert('Update Posted.');">Save Update</button>
+                </div>
+              </form>
+            </div>
+          </section>
+        </section>
+      </div>
+    </div>
+  </main>
+
+  <footer class="sitefooter">
+    <div class="wrap foot">
+      <div>
+        <div class="foot__brand">
+          <img src="images/fyp_logo.png" alt="" class="foot__logo">
+          <strong>CareChannels</strong>
+        </div>
+        <p class="foot__p">Administrative portal for shop, sponsorship, and impact management.</p>
+      </div>
+
+      <div>
+        <div class="foot__h">Manage</div>
+        <a class="foot__a" href="admin_shop.html">Products</a>
+        <a class="foot__a" href="admin_sponsor.html">Sponsorships</a>
+      </div>
+
+      <div>
+        <div class="foot__h">Tracking</div>
+        <a class="foot__a" href="admin_metrics.html">Impact Metrics</a>
+        <a class="foot__a" href="admin_dashboard.html">Activity</a>
+      </div>
+
+      <div>
+        <div class="foot__h">Public Pages</div>
+        <a class="foot__a" href="shop.html">Shop</a>
+        <a class="foot__a" href="sponsor.html">Sponsor</a>
+      </div>
+    </div>
+
+    <div class="wrap foot__bar">
+      <small>© 2025 CareChannels International</small>
+    </div>
+  </footer>
+
+  <script>
+    const topbar = document.getElementById('topbar');
+
+    function handleScroll() {
+      if (window.scrollY > 10) {
+        topbar.classList.add('is-scrolled');
+      } else {
+        topbar.classList.remove('is-scrolled');
+      }
+    }
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    window.addEventListener('load', handleScroll);
+
+    function selectChild(id, name){
+      document.getElementById('u_child').value = id;
+      document.getElementById('u_text').focus();
+      alert('Selected ' + id + ' (' + name + '). Now upload the monthly update.');
+    }
+
+    const childSearch = document.getElementById('childSearch');
+    const childStatus = document.getElementById('childStatus');
+    const childrenTable = document.getElementById('childrenTable');
+
+    function applyChildFilters(){
+      const q = (childSearch.value || '').toLowerCase();
+      const s = childStatus.value;
+
+      [...childrenTable.tBodies[0].rows].forEach(r => {
+        const text = r.innerText.toLowerCase();
+        const badge = r.cells[2].innerText.toLowerCase();
+        const okQ = !q || text.includes(q);
+        const okS = !s || badge.includes(s);
+        r.style.display = (okQ && okS) ? '' : 'none';
+      });
+    }
+
+    childSearch.addEventListener('input', applyChildFilters);
+    childStatus.addEventListener('change', applyChildFilters);
+
+    function resetChildFilters(){
+      childSearch.value = '';
+      childStatus.value = '';
+      applyChildFilters();
+    }
+  </script>
+</body>
+</html>

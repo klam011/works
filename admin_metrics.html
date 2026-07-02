@@ -1,0 +1,211 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>CCI Admin – Impact Metrics</title>
+  <link rel="icon" href="images/fyp_logo.png" type="image/png" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=Zalando+Sans+SemiExpanded:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="admin.css" />
+</head>
+<body>
+  <header class="topbar" id="topbar" role="navigation" aria-label="Top">
+    <div class="wrap topbar__inner">
+      <nav class="nav" aria-label="Primary">
+        <div class="nav__left">
+          <a class="navlink" href="admin_dashboard.html">Dashboard</a>
+          <a class="navlink" href="admin_shop.html">Shop</a>
+        </div>
+
+        <a class="navbrand" href="admin_dashboard.html" aria-label="Care Channels Admin">
+          <span class="navbrand__main">Care Channels</span>
+          <span class="navbrand__sub">Admin</span>
+        </a>
+
+        <div class="nav__rightWrap">
+          <div class="nav__right">
+            <a class="navlink" href="admin_sponsor.html">Sponsor</a>
+            <a class="navlink navlink--active" href="admin_metrics.html">Impact</a>
+          </div>
+
+          <a class="navicon" href="admin_login.html" aria-label="Logout">
+            <svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true">
+              <path fill="currentColor" d="M10 17l1.41-1.41L8.83 13H20v-2H8.83l2.58-2.59L10 7l-5 5 5 5zm-6 3h8v-2H4V6h8V4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2z"/>
+            </svg>
+          </a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <section class="adminHero">
+    <div class="wrap adminHero__inner">
+      <p class="adminHero__eyebrow">Impact Settings</p>
+      <h1 class="adminHero__title">Impact Metrics & Rules</h1>
+      <p class="adminHero__sub">Set the figures shown on the public site to explain how support turns into impact.</p>
+    </div>
+  </section>
+
+  <main class="adminPage">
+    <div class="wrap">
+      <div class="adminShell">
+        <aside class="sidebar" aria-label="Admin navigation">
+          <div class="side__top">
+            <p class="side__title nunito-sans">Manage</p>
+            <h2 class="side__org zalando-sans">Impact Metrics</h2>
+          </div>
+
+          <nav class="side__nav">
+            <a class="side__a" href="admin_dashboard.html">Dashboard</a>
+            <a class="side__a" href="admin_shop.html">Shop / Products</a>
+            <a class="side__a" href="admin_sponsor.html">Sponsorships</a>
+            <a class="side__a is-active" href="admin_metrics.html">Impact Metrics</a>
+          </nav>
+        </aside>
+
+        <section class="main" aria-label="Impact metrics admin content">
+          <section class="card">
+            <div class="card__hd">
+              <h2 class="card__title">Conversion Rules</h2>
+              <p class="card__sub">These figures are used in the public impact visualiser.</p>
+            </div>
+
+            <div class="card__bd">
+              <form method="post" action="#">
+                <div class="formGrid">
+                  <div class="field">
+                    <label class="label" for="r_purchase">Base purchase amount ($))</label>
+                    <input class="input" id="r_purchase" name="r_purchase" type="number" step="0.01" value="15" />
+                    <div class="hint">Used as the reference amount in public impact messages.</div>
+                  </div>
+
+                  <div class="field">
+                    <label class="label" for="r_meals">Meals supported per base purchase</label>
+                    <input class="input" id="r_meals" name="r_meals" type="number" step="1" value="7" />
+                  </div>
+
+                  <div class="field">
+                    <label class="label" for="r_school">School days supported per base purchase</label>
+                    <input class="input" id="r_school" name="r_school" type="number" step="1" value="5" />
+                  </div>
+
+                  <div class="field">
+                    <label class="label" for="r_clinic">Clinic visits supported per base purchase</label>
+                    <input class="input" id="r_clinic" name="r_clinic" type="number" step="1" value="1" />
+                  </div>
+
+                  <div class="field" style="grid-column:1 / -1;">
+                    <label class="label" for="r_note">Public-facing explanation</label>
+                    <textarea class="textarea" id="r_note" name="r_note">Impact values are estimated using program cost breakdowns and averaged per beneficiary.</textarea>
+                  </div>
+                </div>
+
+                <div class="row" style="margin-top:14px; justify-content:flex-end;">
+                  <button class="btn btn--ghost" type="button" onclick="alert('Draft saved.)">Save Draft</button>
+                  <button class="btn" type="submit" onclick="event.preventDefault(); alert('Published.');">Publish Rules</button>
+                </div>
+              </form>
+            </div>
+          </section>
+
+          <section class="card sectionGap">
+            <div class="card__hd">
+              <h2 class="card__title">Impact Totals</h2>
+              <p class="card__sub">These totals can be shown as counters on the public pages.</p>
+            </div>
+
+            <div class="card__bd">
+              <div class="formGrid">
+                <div class="field">
+                  <label class="label" for="t_food">Weeks of food support</label>
+                  <input class="input" id="t_food" type="number" value="2000" />
+                </div>
+
+                <div class="field">
+                  <label class="label" for="t_lunch">School lunches</label>
+                  <input class="input" id="t_lunch" type="number" value="10000" />
+                </div>
+
+                <div class="field">
+                  <label class="label" for="t_clinic2">Clinic visits</label>
+                  <input class="input" id="t_clinic2" type="number" value="4000" />
+                </div>
+
+                <div class="field">
+                  <label class="label" for="t_goal">Annual sponsorship goal</label>
+                  <input class="input" id="t_goal" type="number" value="100" />
+                </div>
+              </div>
+
+              <div class="row" style="margin-top:14px; justify-content:flex-end;">
+                <button class="btn btn--ghost" type="button" onclick="alert('Draft saved.')">Save Draft</button>
+                <button class="btn" type="button" onclick="alert('Published.')">Publish Totals</button>
+              </div>
+            </div>
+          </section>
+
+          <section class="card card--soft sectionGap">
+            <div class="card__bd">
+              <h2 class="card__title" style="font-size:22px;">Public Preview</h2>
+              <p class="card__sub">“A purchase of about $15 can support around <strong>7 meals</strong>, <strong>5 school days</strong>, and <strong>1 clinic visit</strong> based on current programme costs.”</p>
+            </div>
+          </section>
+        </section>
+      </div>
+    </div>
+  </main>
+
+  <footer class="sitefooter">
+    <div class="wrap foot">
+      <div>
+        <div class="foot__brand">
+          <img src="images/fyp_logo.png" alt="" class="foot__logo">
+          <strong>CareChannels</strong>
+        </div>
+        <p class="foot__p">Administrative portal for shop, sponsorship, and impact management.</p>
+      </div>
+
+      <div>
+        <div class="foot__h">Manage</div>
+        <a class="foot__a" href="admin_shop.html">Products</a>
+        <a class="foot__a" href="admin_sponsor.html">Sponsorships</a>
+      </div>
+
+      <div>
+        <div class="foot__h">Tracking</div>
+        <a class="foot__a" href="admin_metrics.html">Impact Metrics</a>
+        <a class="foot__a" href="admin_dashboard.html">Activity</a>
+      </div>
+
+      <div>
+        <div class="foot__h">Public Pages</div>
+        <a class="foot__a" href="shop.html">Shop</a>
+        <a class="foot__a" href="sponsor.html">Sponsor</a>
+      </div>
+    </div>
+
+    <div class="wrap foot__bar">
+      <small>© 2025 CareChannels International</small>
+    </div>
+  </footer>
+
+  <script>
+    const topbar = document.getElementById('topbar');
+
+    function handleScroll() {
+      if (window.scrollY > 10) {
+        topbar.classList.add('is-scrolled');
+      } else {
+        topbar.classList.remove('is-scrolled');
+      }
+    }
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    window.addEventListener('load', handleScroll);
+  </script>
+</body>
+</html>

@@ -1,0 +1,712 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Thiri’s Crafts · Care Channels International</title>
+
+  <link rel="icon" href="images/fyp_logo.png" type="image/png" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=Zalando+Sans+SemiExpanded:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="shop.css">
+  <link rel="stylesheet" href="category.css">
+
+  <style>
+    .thiri-main{
+      background:#efefef;
+      padding:30px 0 8px;
+    }
+
+    .thiri-wrap{
+      max-width:1240px;
+      margin:0 auto;
+      padding:0 24px;
+    }
+
+    .thiri-hero{
+      margin-bottom:26px;
+    }
+
+    .thiri-title{
+      margin:0;
+      font-family:"Zalando Sans SemiExpanded", sans-serif;
+      font-size:clamp(28px, 2.3vw, 42px);
+      line-height:1.08;
+      font-weight:900;
+      color:#000;
+      letter-spacing:-.2px;
+    }
+
+    .thiri-sub{
+      margin:6px 0 0;
+      font-size:clamp(14px, 1vw, 18px);
+      font-weight:600;
+      color:#303030;
+    }
+
+    .story-top{
+      display:grid;
+      grid-template-columns:180px minmax(0, 1fr);
+      gap:38px;
+      align-items:stretch;
+      margin-bottom:34px;
+    }
+
+    .mini-card{
+      background:#efe7bf;
+      border-radius:32px;
+      padding:18px 18px 20px;
+      box-shadow:8px 8px 0 rgba(148,156,148,.95);
+      height:100%;
+      min-height:360px;
+      display:flex;
+      flex-direction:column;
+    }
+
+    .mini-card__imgWrap{
+      width:100%;
+      height:146px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      margin-bottom:10px;
+      flex:0 0 auto;
+    }
+
+    .mini-card__img{
+      width:125px;
+      height:125px;
+      object-fit:contain;
+      display:block;
+    }
+
+    .mini-card__name{
+      margin:0 0 8px;
+      font-family:"Zalando Sans SemiExpanded", sans-serif;
+      font-size:19px;
+      line-height:1.05;
+      font-weight:900;
+      color:#000;
+    }
+
+    .mini-card__list{
+      margin:0;
+      padding:0 0 0 10px;
+      list-style:none;
+      display:grid;
+      gap:5px;
+      color:#303030;
+      font-size:12px;
+      line-height:1.35;
+      font-weight:600;
+    }
+
+    .mini-card__list li{
+      position:relative;
+      padding-left:0;
+    }
+
+    .video-shell{
+      background:#efe7bf;
+      border-radius:42px;
+      box-shadow:8px 8px 0 rgba(148,156,148,.95);
+      overflow:hidden;
+      min-height:360px;
+      height:100%;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      position:relative;
+    }
+
+    .video-shell video{
+      width:100%;
+      height:100%;
+      min-height:360px;
+      display:block;
+      object-fit:cover;
+      background:#efe7bf;
+    }
+
+    .message-title{
+      margin:0 0 18px 14px;
+      font-family:"Zalando Sans SemiExpanded", sans-serif;
+      font-size:clamp(24px, 1.8vw, 34px);
+      line-height:1.08;
+      font-weight:900;
+      color:#000;
+    }
+
+    .speech-wrap{
+      position:relative;
+      margin:0 0 54px;
+    }
+
+    .speech{
+      position:relative;
+      background:#fff;
+      border:5px solid #8f978f;
+      border-radius:36px;
+      padding:30px 42px 32px;
+      font-size:clamp(16px, 1.18vw, 23px);
+      line-height:1.45;
+      color:#303030;
+      font-weight:600;
+      box-sizing:border-box;
+    }
+
+    .speech::before{
+      content:"";
+      position:absolute;
+      left:38px;
+      bottom:-36px;
+      width:0;
+      height:0;
+      border-top:38px solid #8f978f;
+      border-right:32px solid transparent;
+    }
+
+    .speech::after{
+      content:"";
+      position:absolute;
+      left:44px;
+      bottom:-27px;
+      width:0;
+      height:0;
+      border-top:30px solid #fff;
+      border-right:26px solid transparent;
+    }
+
+    .product-grid{
+      display:grid;
+      grid-template-columns:repeat(3, minmax(0, 1fr));
+      gap:58px;
+      margin-bottom:34px;
+    }
+
+    .product-card{
+      background:#efe7bf;
+      border-radius:32px;
+      box-shadow:6px 6px 0 rgba(209,209,192,.82);
+      padding:24px 26px 22px;
+      text-align:center;
+      position:relative;
+    }
+
+    .product-card__imgWrap{
+      height:176px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      margin-bottom:16px;
+    }
+
+    .product-card__img{
+      max-width:100%;
+      max-height:100%;
+      object-fit:contain;
+      display:block;
+    }
+
+    .product-card__title{
+      margin:0;
+      font-family:"Zalando Sans SemiExpanded", sans-serif;
+      font-size:20px;
+      line-height:1.15;
+      font-weight:900;
+      color:#000;
+    }
+
+    .product-card__sub{
+      margin:6px 0 8px;
+      font-size:14px;
+      line-height:1.35;
+      color:#4a4a4a;
+      font-weight:600;
+    }
+
+    .product-card__price{
+      margin:0 0 14px;
+      font-family:"Zalando Sans SemiExpanded", sans-serif;
+      font-size:18px;
+      line-height:1;
+      font-weight:900;
+      color:#000;
+    }
+
+    .product-card__btn{
+      width:100%;
+      min-height:44px;
+      border:0;
+      border-radius:16px;
+      background:#155623;
+      color:#fff;
+      font-family:"Zalando Sans SemiExpanded", sans-serif;
+      font-size:14px;
+      font-weight:800;
+      line-height:1;
+      cursor:pointer;
+      transition:transform .15s ease, filter .18s ease, background .18s ease;
+    }
+
+    .product-card__btn:hover{
+      transform:translateY(-2px);
+      filter:drop-shadow(0 8px 14px rgba(0,0,0,.14));
+      background:#12471d;
+    }
+
+    .product-card__btn.is-added{
+      background:#2f7d40;
+    }
+
+    .back-artisans{
+      text-align:center;
+      margin:8px 0 0;
+    }
+
+    .back-artisans__link{
+      display:inline-block;
+      font-family:"Zalando Sans SemiExpanded", sans-serif;
+      font-size:18px;
+      font-weight:800;
+      color:#155623;
+      text-decoration:none;
+      transition:opacity .18s ease, transform .18s ease;
+    }
+
+    .back-artisans__link:hover{
+      opacity:.8;
+      transform:translateY(-1px);
+    }
+
+    .navicon{
+      position:relative;
+      overflow:visible;
+    }
+
+    .basket-badge{
+      position:absolute;
+      top:3px;
+      right:2px;
+      min-width:18px;
+      height:18px;
+      padding:0 5px;
+      border-radius:999px;
+      background:#155623;
+      color:#fff;
+      font-size:11px;
+      font-weight:900;
+      line-height:18px;
+      text-align:center;
+      transform:scale(0);
+      transform-origin:center;
+      transition:transform .18s ease;
+      pointer-events:none;
+    }
+
+    .basket-badge.is-visible{
+      transform:scale(1);
+    }
+
+    .navicon.basket-pop{
+      animation:basketPop .42s ease;
+    }
+
+    @keyframes basketPop{
+      0%{transform:translateY(0) scale(1);}
+      35%{transform:translateY(-4px) scale(1.16);}
+      100%{transform:translateY(0) scale(1);}
+    }
+
+    .basket-toast{
+      position:fixed;
+      top:94px;
+      right:26px;
+      background:#155623;
+      color:#fff;
+      padding:12px 16px;
+      border-radius:14px;
+      font-size:14px;
+      font-weight:800;
+      box-shadow:0 10px 24px rgba(0,0,0,.18);
+      opacity:0;
+      pointer-events:none;
+      transform:translateY(-10px);
+      transition:opacity .2s ease, transform .2s ease;
+      z-index:100;
+    }
+
+    .basket-toast.is-show{
+      opacity:1;
+      transform:translateY(0);
+    }
+
+    @media (max-width: 1080px){
+      .story-top{
+        grid-template-columns:1fr;
+        gap:22px;
+      }
+
+      .mini-card{
+        max-width:240px;
+        min-height:0;
+      }
+
+      .video-shell{
+        min-height:300px;
+      }
+
+      .video-shell video{
+        min-height:300px;
+      }
+
+      .product-grid{
+        grid-template-columns:1fr 1fr;
+        gap:28px;
+      }
+    }
+
+    @media (max-width: 720px){
+      .thiri-main{
+        padding:24px 0 48px;
+      }
+
+      .thiri-wrap{
+        padding:0 16px;
+      }
+
+      .mini-card{
+        max-width:none;
+      }
+
+      .video-shell{
+        min-height:220px;
+        border-radius:28px;
+      }
+
+      .video-shell video{
+        min-height:220px;
+      }
+
+      .message-title{
+        margin-left:0;
+      }
+
+      .speech{
+        padding:20px 18px 22px;
+        border-radius:24px;
+        font-size:16px;
+      }
+
+      .speech::before{
+        left:24px;
+        bottom:-28px;
+        border-top-width:30px;
+        border-right-width:24px;
+      }
+
+      .speech::after{
+        left:29px;
+        bottom:-21px;
+        border-top-width:24px;
+        border-right-width:19px;
+      }
+
+      .product-grid{
+        grid-template-columns:1fr;
+        gap:22px;
+      }
+
+      .basket-toast{
+        right:16px;
+        left:16px;
+        top:84px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header class="topbar" id="topbar" role="navigation" aria-label="Top">
+    <div class="wrap topbar__inner">
+      <nav class="nav" aria-label="Primary">
+        <div class="nav__left">
+          <a class="navlink" href="index.html">Home</a>
+          <a class="navlink navlink--active" href="shop.html">Shop</a>
+        </div>
+
+        <span class="navbrand" aria-label="Care Channels International">
+          <span class="navbrand__main">Care Channels</span>
+          <span class="navbrand__sub">International</span>
+        </span>
+
+        <div class="nav__rightWrap">
+          <div class="nav__right">
+            <a class="navlink" href="sponsor.html">Sponsor</a>
+            <a class="navlink" href="https://carechannels.org/contact-us/">Contact</a>
+          </div>
+
+          <a class="navicon" id="basketIcon" href="basket.html" aria-label="Basket">
+            <img src="images/basketicon.png" alt="Basket" style="width:26px;height:26px;display:block;object-fit:contain;">
+            <span class="basket-badge" id="basketBadge">0</span>
+          </a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <div class="basket-toast" id="basketToast">Added to basket</div>
+
+  <main class="thiri-main">
+    <section class="thiri-wrap">
+      <div class="thiri-hero">
+        <h1 class="thiri-title">Meet Thiri and her crafts</h1>
+        <p class="thiri-sub">Hear their stories. Empower their future.</p>
+      </div>
+
+      <div class="story-top">
+        <aside class="mini-card" aria-label="Thiri profile">
+          <div class="mini-card__imgWrap">
+            <img class="mini-card__img" src="images/icon.png" alt="Thiri illustration">
+          </div>
+          <h2 class="mini-card__name">Thiri Aung</h2>
+          <ul class="mini-card__list">
+            <li>📍 Myanmar</li>
+            <li>🧵 Handwoven Textiles</li>
+            <li>⏱ ~6 hrs / piece</li>
+            <li>🎒 1 week of school supplies funded per textile piece</li>
+          </ul>
+        </aside>
+
+        <div class="video-shell">
+          <video autoplay muted loop playsinline preload="auto">
+            <source src="video/thiri.mp4" type="video/mp4">
+          </video>
+        </div>
+      </div>
+
+      <h2 class="message-title">A message from Thiri</h2>
+
+      <div class="speech-wrap">
+        <div class="speech">
+          I learned this craft from my mother, and now I teach it to others. Your support allows us to preserve our tradition and build a better future for our children. Every purchase truly makes a difference.
+        </div>
+      </div>
+
+      <div class="product-grid">
+        <article class="product-card">
+          <div class="product-card__imgWrap">
+            <img class="product-card__img" src="images/scarves.png" alt="Handwoven Scarf product">
+          </div>
+          <h3 class="product-card__title">Handwoven Scarf</h3>
+          <p class="product-card__sub">Natural-dyed cotton</p>
+          <p class="product-card__price">$25</p>
+          <button
+            class="product-card__btn"
+            type="button"
+            data-id="handwoven-scarf"
+            data-name="Handwoven Scarf"
+            data-subtitle="Natural-dyed cotton"
+            data-price="25"
+            data-image="images/scarves.png"
+          >Bring It Home</button>
+        </article>
+
+        <article class="product-card">
+          <div class="product-card__imgWrap">
+            <img class="product-card__img" src="images/shawls.png" alt="Indigo Scarf product">
+          </div>
+          <h3 class="product-card__title">Indigo Scarf</h3>
+          <p class="product-card__sub">Plant-based dye</p>
+          <p class="product-card__price">$27</p>
+          <button
+            class="product-card__btn"
+            type="button"
+            data-id="indigo-scarf"
+            data-name="Indigo Scarf"
+            data-subtitle="Plant-based dye"
+            data-price="27"
+            data-image="images/shawls.png"
+          >Bring It Home</button>
+        </article>
+
+        <article class="product-card">
+          <div class="product-card__imgWrap">
+            <img class="product-card__img" src="images/tablerunners.png" alt="Table Runner product">
+          </div>
+          <h3 class="product-card__title">Table Runner</h3>
+          <p class="product-card__sub">Handwoven textile</p>
+          <p class="product-card__price">$30</p>
+          <button
+            class="product-card__btn"
+            type="button"
+            data-id="table-runner"
+            data-name="Table Runner"
+            data-subtitle="Handwoven textile"
+            data-price="30"
+            data-image="images/tablerunners.png"
+          >Bring It Home</button>
+        </article>
+      </div>
+
+      <div class="back-artisans">
+        <a class="back-artisans__link" href="category-textiles.html">View other artisans</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="sitefooter">
+    <div class="wrap foot">
+      <div class="foot__col">
+        <div class="foot__brand">
+          <img src="images/fyp_logo.png" alt="" class="foot__logo">
+          <strong>CareChannels</strong>
+        </div>
+        <p class="foot__p">A marketplace that turns every purchase into measurable impact for communities across Asia.</p>
+      </div>
+
+      <div class="foot__col">
+        <div class="foot__h">Programs</div>
+        <a href="#" class="foot__a" onclick="comingSoon(event)">Livelihood</a>
+        <a href="#" class="foot__a" onclick="comingSoon(event)">Education</a>
+        <a href="#" class="foot__a" onclick="comingSoon(event)">Healthcare</a>
+      </div>
+
+      <div class="foot__col">
+        <div class="foot__h">Resources</div>
+        <a href="sponsor.html" class="foot__a">Sponsorships</a>
+        <a href="#" class="foot__a" onclick="comingSoon(event)">Impact Reports</a>
+        <a href="#" class="foot__a" onclick="comingSoon(event)">Volunteer</a>
+      </div>
+
+      <div class="foot__col">
+        <div class="foot__h">Connect</div>
+        <a href="#" class="foot__a" onclick="comingSoon(event)">Instagram</a>
+        <a href="#" class="foot__a" onclick="comingSoon(event)">LinkedIn</a>
+        <a href="#" class="foot__a" onclick="comingSoon(event)">Email</a>
+      </div>
+    </div>
+
+    <div class="wrap foot__bar">
+      <small>© 2025 CareChannels International</small>
+    </div>
+  </footer>
+
+  <script>
+    
+    const BASKET_KEY = 'cciBasket';
+    const ORDER_NOTE_KEY = 'cciOrderNote';
+
+    function comingSoon(e){
+      if (e && typeof e.preventDefault === 'function') {
+        e.preventDefault();
+      }
+      alert('This section is coming soon.');
+    }
+
+    function getBasket(){
+      try{
+        return JSON.parse(localStorage.getItem(BASKET_KEY)) || [];
+      }catch(err){
+        return [];
+      }
+    }
+
+    function saveBasket(items){
+      localStorage.setItem(BASKET_KEY, JSON.stringify(items));
+    }
+
+    function getBasketCount(){
+      return getBasket().reduce((sum, item) => sum + item.qty, 0);
+    }
+
+    function updateBasketBadge(){
+      const badge = document.getElementById('basketBadge');
+      if (!badge) return;
+      const count = getBasketCount();
+      badge.textContent = count;
+      badge.classList.toggle('is-visible', count > 0);
+    }
+
+    function animateBasketFeedback(){
+      const icon = document.getElementById('basketIcon');
+      const toast = document.getElementById('basketToast');
+      if (icon) {
+        icon.classList.remove('basket-pop');
+        void icon.offsetWidth;
+        icon.classList.add('basket-pop');
+      }
+      if (toast) {
+        toast.classList.add('is-show');
+        clearTimeout(window.__basketToastTimer);
+        window.__basketToastTimer = setTimeout(() => {
+          toast.classList.remove('is-show');
+        }, 1400);
+      }
+    }
+
+    function addToBasket(product){
+      const basket = getBasket();
+      const existing = basket.find(item => item.id === product.id);
+
+      if (existing) {
+        existing.qty += 1;
+      } else {
+        basket.push({
+          id: product.id,
+          name: product.name,
+          subtitle: product.subtitle,
+          price: Number(product.price),
+          image: product.image,
+          qty: 1
+        });
+      }
+
+      saveBasket(basket);
+      updateBasketBadge();
+      animateBasketFeedback();
+    }
+
+    document.querySelectorAll('.product-card__btn').forEach(button => {
+      button.addEventListener('click', function(){
+        addToBasket({
+          id: this.dataset.id,
+          name: this.dataset.name,
+          subtitle: this.dataset.subtitle,
+          price: this.dataset.price,
+          image: this.dataset.image
+        });
+
+        const originalText = this.textContent;
+        this.textContent = 'Added!';
+        this.classList.add('is-added');
+
+        setTimeout(() => {
+          this.textContent = originalText;
+          this.classList.remove('is-added');
+        }, 900);
+      });
+    });
+
+    (function () {
+      const topbar = document.getElementById('topbar') || document.querySelector('.topbar');
+      if (!topbar) return;
+
+      const onScroll = () => {
+        if (window.scrollY > 8) {
+          topbar.classList.add('is-scrolled');
+        } else {
+          topbar.classList.remove('is-scrolled');
+        }
+      };
+
+      document.addEventListener('scroll', onScroll, { passive: true });
+      onScroll();
+      updateBasketBadge();
+    })();
+  </script>
+</body>
+</html>

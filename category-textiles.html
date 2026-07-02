@@ -1,0 +1,274 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Textiles · Care Channels International</title>
+
+  <link rel="icon" href="images/fyp_logo.png" type="image/png" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=Zalando+Sans+SemiExpanded:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="shop.css">
+  <link rel="stylesheet" href="category.css">
+</head>
+
+<body>
+  <header class="topbar" id="topbar" role="navigation" aria-label="Top">
+    <div class="wrap topbar__inner">
+      <nav class="nav" aria-label="Primary">
+        <div class="nav__left">
+          <a class="navlink" href="index.html">Home</a>
+          <a class="navlink navlink--active" href="shop.html">Shop</a>
+        </div>
+
+        <span class="navbrand" aria-label="Care Channels International">
+          <span class="navbrand__main">Care Channels</span>
+          <span class="navbrand__sub">International</span>
+        </span>
+
+        <div class="nav__rightWrap">
+          <div class="nav__right">
+            <a class="navlink" href="sponsor.html">Sponsor</a>
+            <a class="navlink" href="https://carechannels.org/contact-us/">Contact</a>
+          </div>
+
+          <a class="navicon" href="profile.html" aria-label="Profile">
+            <svg viewBox="0 0 24 24" width="26" height="26" aria-hidden="true">
+              <path fill="currentColor" d="M12 12c2.76 0 5-2.24 5-5S14.76 2 12 2 7 4.24 7 7s2.24 5 5 5Zm0 2c-4.42 0-8 2.24-8 5v1h16v-1c0-2.76-3.58-5-8-5Z"/>
+            </svg>
+          </a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main class="textiles-main">
+    <section class="textiles-hero">
+      <div class="textiles-wrap">
+        <h1 class="textiles-title">Meet The Hands Behind Every Product</h1>
+        <p class="textiles-sub">Hear their stories. Empower their future.</p>
+      </div>
+    </section>
+
+    <section class="textiles-showcase">
+      <div class="textiles-wrap">
+        <div class="artisan-stage">
+          <button class="arrow-btn arrow-btn--left" id="prevCard" aria-label="Show previous artisan">
+            <span class="arrow-shape" aria-hidden="true"></span>
+          </button>
+
+          <div class="artisan-flip" id="artisanFlip">
+            <article class="artisan-card" aria-live="polite">
+              <div class="artisan-grid">
+                <div class="artisan-photoWrap">
+                  <div class="artisan-photo" id="artisanPhotoWrap">
+                    <img id="artisanPhoto" src="images/icon.png" alt="Artisan portrait">
+                  </div>
+                </div>
+
+                <div class="artisan-content">
+                  <div class="artisan-namePill">
+                    <h2 class="artisan-name" id="artisanName">Thiri Aung</h2>
+                  </div>
+
+                  <div class="artisan-meta">
+                    <span class="meta-chip" id="artisanCountry">📍 Myanmar</span>
+                    <span class="meta-chip" id="artisanCraft">🧺 Handwoven Textiles</span>
+                    <span class="meta-chip" id="artisanTime">⏱ ~6 hrs / piece</span>
+                    <div class="meta-chip meta-chip--impact" id="artisanImpact">🎒 1 week of school supplies funded per textile piece</div>
+                  </div>
+                </div>
+
+                <p class="artisan-desc" id="artisanDesc">
+                  <strong>Thiri</strong>supports her family by creating handwoven textiles inspired by traditional patterns from her community. Through her craft, she helps preserve local weaving skills while earning a steady income for her household.
+                </p>
+
+                <div class="artisan-actions">
+                  <button class="artisan-btn" id="storyBtn" type="button" onclick="window.location.href='products_thiri.html'">Hear more about Thiri’s story</button>
+                <button class="artisan-btn" id="supportBtn" type="button" onclick="window.location.href='products_thiri.html'">Support Thiri’s crafts</button>
+                </div>
+              </div>
+            </article>
+          </div>
+
+          <button class="arrow-btn arrow-btn--right" id="nextCard" aria-label="Show next artisan">
+            <span class="arrow-shape" aria-hidden="true"></span>
+          </button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="sitefooter">
+    <div class="wrap foot">
+      <div class="foot__col">
+        <div class="foot__brand">
+          <img src="images/fyp_logo.png" alt="" class="foot__logo">
+          <strong>CareChannels</strong>
+        </div>
+        <p class="foot__p">A marketplace that turns every purchase into measurable impact for communities across Asia.</p>
+      </div>
+
+      <div class="foot__col">
+        <div class="foot__h">Programs</div>
+        <a href="#" class="foot__a" onclick="comingSoon(event)">Livelihood</a>
+        <a href="#" class="foot__a" onclick="comingSoon(event)">Education</a>
+        <a href="#" class="foot__a" onclick="comingSoon(event)">Healthcare</a>
+      </div>
+
+      <div class="foot__col">
+        <div class="foot__h">Resources</div>
+        <a href="sponsor.html" class="foot__a">Sponsorships</a>
+        <a href="#" class="foot__a" onclick="comingSoon(event)">Impact Reports</a>
+        <a href="#" class="foot__a" onclick="comingSoon(event)">Volunteer</a>
+      </div>
+
+      <div class="foot__col">
+        <div class="foot__h">Connect</div>
+        <a href="#" class="foot__a" onclick="comingSoon(event)">Instagram</a>
+        <a href="#" class="foot__a" onclick="comingSoon(event)">LinkedIn</a>
+        <a href="#" class="foot__a" onclick="comingSoon(event)">Email</a>
+      </div>
+    </div>
+
+    <div class="wrap foot__bar">
+      <small>© 2025 CareChannels International</small>
+    </div>
+  </footer>
+
+  <script>
+    function comingSoon(e){
+      e.preventDefault();
+      alert('This section is coming soon.');
+    }
+  
+    const artisans = [
+      {
+        name: "Thiri Aung",
+        shortName: "Thiri",
+        country: "📍 Myanmar",
+        craft: "🧵 Handwoven Textiles",
+        time: "⏱ ~6 hrs / piece",
+        impact: "🎒 Each textile piece helps fund 1 week of school supplies",
+        desc: "supports her family through handwoven textiles inspired by traditional patterns from her community. Her work helps preserve local weaving skills while providing a steady income for her household.",
+        photo: "images/icon.png",
+        storyLabel: "Hear more about Thiri’s story",
+        supportLabel: "Support Thiri’s textiles"
+      },
+      {
+        name: "Lian Sui",
+        shortName: "Lian",
+        country: "📍 Vietnam",
+        craft: "🧵 Handwoven Table Runner",
+        time: "⏱ ~5 hrs / runner",
+        impact: "📚 2 days of after-school learning funded per runner",
+        desc: "weaves table runners using cotton thread and traditional village motifs. Her work helps bring steady income into her home while keeping local weaving techniques alive for the next generation.",
+        photo: "images/icon.png",
+        storyLabel: "Hear more about Lian’s story",
+        supportLabel: "Support Lian’s crafts"
+      },
+      {
+        name: "Mala Devi",
+        shortName: "Mala",
+        country: "📍 Nepal",
+        craft: "🧣 Handwoven Shawl",
+        time: "⏱ ~6 hrs / shawl",
+        impact: "🩺 1 family health check funded per shawl",
+        desc: "creates soft shawls with careful hand-finishing and rich natural tones. Through each piece she earns dignified income and mentors younger women who are learning textile craftsmanship.",
+        photo: "images/icon.png",
+        storyLabel: "Hear more about Mala’s story",
+        supportLabel: "Support Mala’s crafts"
+      }
+    ];
+  
+    let currentIndex = 0;
+    let isAnimating = false;
+  
+    const flipWrap = document.getElementById('artisanFlip');
+    const nameEl = document.getElementById('artisanName');
+    const countryEl = document.getElementById('artisanCountry');
+    const craftEl = document.getElementById('artisanCraft');
+    const timeEl = document.getElementById('artisanTime');
+    const impactEl = document.getElementById('artisanImpact');
+    const descEl = document.getElementById('artisanDesc');
+    const photoWrapEl = document.getElementById('artisanPhotoWrap');
+    const storyBtn = document.getElementById('storyBtn');
+    const supportBtn = document.getElementById('supportBtn');
+    const prevBtn = document.getElementById('prevCard');
+    const nextBtn = document.getElementById('nextCard');
+  
+    function fallbackAvatar(initials){
+      photoWrapEl.innerHTML = '<div class="artisan-fallback" aria-hidden="true">' + initials + '</div>';
+    }
+  
+    function renderArtisan(index){
+      const artisan = artisans[index];
+  
+      nameEl.textContent = artisan.name;
+      countryEl.textContent = artisan.country;
+      craftEl.textContent = artisan.craft;
+      timeEl.textContent = artisan.time;
+      impactEl.textContent = artisan.impact;
+      descEl.innerHTML = '<strong>' + artisan.shortName + '</strong> ' + artisan.desc;
+      storyBtn.textContent = artisan.storyLabel;
+      supportBtn.textContent = artisan.supportLabel;
+  
+      photoWrapEl.innerHTML = '<img id="artisanPhoto" src="' + artisan.photo + '" alt="' + artisan.name + ' portrait">';
+      const img = document.getElementById('artisanPhoto');
+      img.onerror = function(){
+        fallbackAvatar(artisan.shortName.charAt(0));
+      };
+    }
+  
+    function changeToIndex(nextIndex){
+      if(isAnimating) return;
+      isAnimating = true;
+  
+      flipWrap.classList.remove('is-fading');
+      void flipWrap.offsetWidth;
+      flipWrap.classList.add('is-fading');
+  
+      setTimeout(function(){
+        currentIndex = nextIndex;
+        renderArtisan(currentIndex);
+      }, 140);
+  
+      setTimeout(function(){
+        flipWrap.classList.remove('is-fading');
+        isAnimating = false;
+      }, 320);
+    }
+  
+    prevBtn.addEventListener('click', function(){
+      const nextIndex = (currentIndex - 1 + artisans.length) % artisans.length;
+      changeToIndex(nextIndex);
+    });
+  
+    nextBtn.addEventListener('click', function(){
+      const nextIndex = (currentIndex + 1) % artisans.length;
+      changeToIndex(nextIndex);
+    });
+  
+    renderArtisan(currentIndex);
+  
+    (function () {
+      const topbar = document.getElementById('topbar') || document.querySelector('.topbar');
+      if (!topbar) return;
+  
+      const onScroll = () => {
+        if (window.scrollY > 8) {
+          topbar.classList.add('is-scrolled');
+        } else {
+          topbar.classList.remove('is-scrolled');
+        }
+      };
+  
+      document.addEventListener('scroll', onScroll, { passive: true });
+      onScroll();
+    })();
+  </script>
+</body>
+</html>

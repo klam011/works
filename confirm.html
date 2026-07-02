@@ -1,0 +1,389 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Order Confirmation · Care Channels International</title>
+
+  <link rel="icon" href="images/fyp_logo.png" type="image/png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=Zalando+Sans+SemiExpanded:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="basket.css">
+
+  <style>
+    .confirm-main{
+      background:#efefef;
+    }
+
+    .confirm-wrap{
+      max-width:1240px;
+      margin:0 auto;
+      padding:42px 24px 28px;
+    }
+
+    .confirm-hero{
+      margin-bottom:28px;
+    }
+
+    .confirm-title{
+      margin:0 0 8px;
+      font-family:"Zalando Sans SemiExpanded", sans-serif;
+      font-size:clamp(30px, 2.5vw, 46px);
+      line-height:1.08;
+      font-weight:900;
+      color:#000;
+      letter-spacing:-.2px;
+    }
+
+    .confirm-sub{
+      margin:0;
+      font-size:clamp(15px, 1.05vw, 19px);
+      line-height:1.45;
+      font-weight:600;
+      color:#2f2f2f;
+      max-width:980px;
+    }
+
+    .confirm-layout{
+    display:flex;
+    justify-content:space-between;
+    align-items:flex-start;
+    gap:28px;
+    min-height:auto;
+    padding-bottom:40px;
+    }
+
+    .confirm-card{
+      width:min(840px, 100%);
+      background:#efe7bf;
+      border-radius:44px;
+      padding:42px 44px 30px;
+      box-shadow:9px 9px 0 rgba(148,156,148,.92);
+    }
+
+    .confirm-card__title{
+      margin:0 0 28px;
+      font-family:"Zalando Sans SemiExpanded", sans-serif;
+      font-size:clamp(28px, 2.1vw, 40px);
+      line-height:1.08;
+      font-weight:900;
+      color:#000;
+    }
+
+    .confirm-card__text{
+      margin:0 0 18px;
+      font-size:clamp(16px, 1.08vw, 20px);
+      line-height:1.45;
+      font-weight:600;
+      color:#2e2e2e;
+      max-width:660px;
+    }
+
+    .confirm-card__order{
+      margin:0 0 34px;
+      font-family:"Zalando Sans SemiExpanded", sans-serif;
+      font-size:clamp(18px, 1.25vw, 24px);
+      line-height:1.2;
+      font-weight:900;
+      color:#000;
+    }
+
+    .confirm-divider{
+      border-top:2px dotted rgba(0,0,0,.5);
+      margin:0 0 26px;
+    }
+
+    .confirm-card__note{
+      margin:0 0 42px;
+      font-size:clamp(16px, 1.08vw, 20px);
+      line-height:1.45;
+      font-weight:600;
+      color:#2e2e2e;
+      max-width:720px;
+    }
+
+    .confirm-actions{
+      display:flex;
+      justify-content:flex-end;
+    }
+
+    .confirm-btn{
+      width:262px;
+      min-height:50px;
+      border:0;
+      border-radius:18px;
+      background:#155623;
+      color:#fff;
+      font-family:"Zalando Sans SemiExpanded", sans-serif;
+      font-size:16px;
+      font-weight:800;
+      line-height:1;
+      cursor:pointer;
+      transition:transform .15s ease, filter .18s ease, background .18s ease;
+    }
+
+    .confirm-btn:hover{
+      transform:translateY(-2px);
+      filter:drop-shadow(0 8px 14px rgba(0,0,0,.14));
+      background:#12471d;
+    }
+
+    .continue-wrap{
+      flex:1;
+      display:flex;
+      justify-content:flex-end;
+      align-self:flex-end;
+      padding-bottom:8px;
+    }
+
+    .continue-link{
+      font-family:"Zalando Sans SemiExpanded", sans-serif;
+      font-size:16px;
+      font-weight:900;
+      color:#155623;
+      text-decoration:none;
+      transition:opacity .18s ease, transform .18s ease;
+      white-space:nowrap;
+    }
+
+    .continue-link:hover{
+      opacity:.8;
+      transform:translateY(-1px);
+    }
+
+    .basket-badge{
+      position:absolute;
+      top:3px;
+      right:2px;
+      min-width:18px;
+      height:18px;
+      padding:0 5px;
+      border-radius:999px;
+      background:#155623;
+      color:#fff;
+      font-size:11px;
+      font-weight:900;
+      line-height:18px;
+      text-align:center;
+      transform:scale(0);
+      transition:transform .18s ease;
+    }
+
+    .basket-badge.is-visible{
+      transform:scale(1);
+    }
+
+    @media (max-width:980px){
+      .confirm-layout{
+        flex-direction:column;
+        align-items:stretch;
+        min-height:auto;
+      }
+
+      .confirm-card{
+        width:100%;
+      }
+
+      .continue-wrap{
+        justify-content:flex-end;
+        padding-right:4px;
+      }
+    }
+
+    @media (max-width:760px){
+      .confirm-wrap{
+        padding:28px 16px 0;
+      }
+
+      .confirm-card{
+        border-radius:30px;
+        padding:28px 20px 24px;
+      }
+
+      .confirm-card__title{
+        margin-bottom:20px;
+      }
+
+      .confirm-card__order{
+        margin-bottom:24px;
+      }
+
+      .confirm-card__note{
+        margin-bottom:28px;
+      }
+
+      .confirm-actions{
+        justify-content:center;
+      }
+
+      .confirm-btn{
+        width:100%;
+        max-width:320px;
+      }
+
+      .continue-wrap{
+        justify-content:center;
+        padding-bottom:0;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar" id="topbar" role="navigation" aria-label="Top">
+    <div class="wrap topbar__inner">
+      <nav class="nav" aria-label="Primary">
+        <div class="nav__left">
+          <a class="navlink" href="index.html">Home</a>
+          <a class="navlink navlink--active" href="shop.html">Shop</a>
+        </div>
+
+        <span class="navbrand" aria-label="Care Channels International">
+          <span class="navbrand__main">Care Channels</span>
+          <span class="navbrand__sub">International</span>
+        </span>
+
+        <div class="nav__rightWrap">
+          <div class="nav__right">
+            <a class="navlink" href="sponsor.html">Sponsor</a>
+            <a class="navlink" href="https://carechannels.org/contact-us/">Contact</a>
+          </div>
+
+          <a class="navicon" href="basket.html" aria-label="Basket">
+            <img src="images/basketicon.png" alt="Basket" class="navicon__img">
+            <span class="basket-badge" id="basketBadge">0</span>
+          </a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main class="confirm-main">
+    <section class="confirm-wrap">
+      <div class="confirm-hero">
+        <h1 class="confirm-title">Your Impact Is On Its Way</h1>
+        <p class="confirm-sub">Your order has been received, and your support is already making a difference in an artisan’s home today..</p>
+      </div>
+
+      <div class="confirm-layout">
+        <section class="confirm-card">
+          <h2 class="confirm-card__title">Order Confirmation</h2>
+
+          <p class="confirm-card__text">
+            Thank you for your purchase.<br>
+            Your handmade goods are being prepared for delivery.
+          </p>
+
+          <p class="confirm-card__order">Order Number: <span id="orderNumber">#CCI-2026-1048</span></p>
+
+          <div class="confirm-divider"></div>
+
+          <p class="confirm-card__note">
+            Thank you for supporting our hands and our communities. Your purchase allows us to preserve our craft and provide for our families.
+          </p>
+
+          <div class="confirm-actions">
+            <button class="confirm-btn" type="button" onclick="alert('Your order is on the way.')">Track Your Order</button>
+          </div>
+        </section>
+
+        <div class="continue-wrap">
+          <a class="continue-link" href="shop.html">Continue Browsing &gt;&gt;</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="sitefooter">
+    <div class="wrap foot">
+      <div class="foot__col">
+        <div class="foot__brand">
+          <img src="images/fyp_logo.png" alt="" class="foot__logo">
+          <strong>CareChannels</strong>
+        </div>
+        <p class="foot__p">A marketplace that turns every purchase into measurable impact for communities across Asia.</p>
+      </div>
+
+      <div class="foot__col">
+        <div class="foot__h">Programs</div>
+        <a href="#" class="foot__a" onclick="comingSoon(event)">Livelihood</a>
+        <a href="#" class="foot__a" onclick="comingSoon(event)">Education</a>
+        <a href="#" class="foot__a" onclick="comingSoon(event)">Healthcare</a>
+      </div>
+
+      <div class="foot__col">
+        <div class="foot__h">Resources</div>
+        <a href="sponsor.html" class="foot__a">Sponsorships</a>
+        <a href="#" class="foot__a" onclick="comingSoon(event)">Impact Reports</a>
+        <a href="#" class="foot__a" onclick="comingSoon(event)">Volunteer</a>
+      </div>
+
+      <div class="foot__col">
+        <div class="foot__h">Connect</div>
+        <a href="#" class="foot__a" onclick="comingSoon(event)">Instagram</a>
+        <a href="#" class="foot__a" onclick="comingSoon(event)">LinkedIn</a>
+        <a href="#" class="foot__a" onclick="comingSoon(event)">Email</a>
+      </div>
+    </div>
+
+    <div class="wrap foot__bar">
+      <small>© 2025 CareChannels International</small>
+    </div>
+  </footer>
+
+  <script>
+    const BASKET_KEY = 'cciBasket';
+    const ORDER_NOTE_KEY = 'cciOrderNote';
+    const LAST_ORDER_KEY = 'cciLastOrder';
+
+    function comingSoon(e){
+      if (e && typeof e.preventDefault === 'function') {
+        e.preventDefault();
+      }
+      alert('This section is coming soon.');
+    }
+
+    function updateBasketBadge(){
+      const badge = document.getElementById('basketBadge');
+      if (!badge) return;
+
+      let basket = [];
+      try{
+        basket = JSON.parse(localStorage.getItem(BASKET_KEY)) || [];
+      }catch(err){
+        basket = [];
+      }
+
+      const count = basket.reduce((sum, item) => sum + item.qty, 0);
+      badge.textContent = count;
+      badge.classList.toggle('is-visible', count > 0);
+    }
+
+    (function(){
+      const topbar = document.getElementById('topbar');
+      const onScroll = () => {
+        if (window.scrollY > 8) {
+          topbar.classList.add('is-scrolled');
+        } else {
+          topbar.classList.remove('is-scrolled');
+        }
+      };
+
+      document.addEventListener('scroll', onScroll, { passive: true });
+      onScroll();
+    })();
+
+    (function(){
+      const orderNumberEl = document.getElementById('orderNumber');
+      try{
+        const lastOrder = JSON.parse(localStorage.getItem(LAST_ORDER_KEY)) || null;
+        if (lastOrder && lastOrder.orderNumber) {
+          orderNumberEl.textContent = lastOrder.orderNumber;
+        }
+      }catch(err){}
+      updateBasketBadge();
+    })();
+  </script>
+</body>
+</html>

@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>CCI Admin – Login</title>
+  <link rel="icon" href="images/fyp_logo.png" type="image/png" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=Zalando+Sans+SemiExpanded:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="admin.css" />
+</head>
+<body>
+  <header class="topbar is-scrolled" id="topbar" role="navigation" aria-label="Top">
+    <div class="wrap topbar__inner">
+      <nav class="nav" aria-label="Primary">
+        <div class="nav__left">
+          <a class="navlink" href="shop.html">Public Shop</a>
+          
+        </div>
+
+        <a class="navbrand" href="admin_login.html" aria-label="Care Channels Admin">
+          <span class="navbrand__main">Care Channels</span>
+          <span class="navbrand__sub">Admin</span>
+        </a>
+
+        <div class="nav__rightWrap">
+          <div class="nav__right">
+            <a class="navlink" href="sponsor.html">Public Sponsor</a>
+          </div>
+
+         
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main class="loginPage" aria-label="Admin login">
+    <section class="loginCard">
+      <div class="loginHead">
+        <img src="images/fyp_logo.png" alt="CCI logo" />
+        <div>
+          <h1 class="loginTitle zalando-sans">Staff Login</h1>
+          <p class="loginP">Sign in with your staff email to access the admin dashboard.</p>
+        </div>
+      </div>
+
+      <form method="post" action="#" autocomplete="on">
+        <div class="formGrid">
+          <div class="field" style="grid-column:1 / -1;">
+            <label class="label" for="email">Staff Email</label>
+            <input class="input" id="email" name="email" type="email" placeholder="name@carechannels.org" required />
+          </div>
+
+          <div class="field" style="grid-column:1 / -1;">
+            <label class="label" for="password">Password</label>
+            <input class="input" id="password" name="password" type="password" placeholder="••••••••" required />
+           
+          </div>
+        </div>
+
+        <div class="row" style="margin-top:14px; justify-content:space-between;">
+          <a class="btn btn--ghost" href="#" onclick="alert('Reset password link sent to your email.')">Forgot password</a>
+          <button class="btn" type="submit" onclick="event.preventDefault(); window.location.href='admin_dashboard.html';">Log in</button>
+        </div>
+      </form>
+    </section>
+  </main>
+</body>
+</html>

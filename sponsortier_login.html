@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>CareChannels – Sponsor Portal Login</title>
+
+  <link rel="icon" href="images/fyp_logo.png" type="image/png" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=Zalando+Sans+SemiExpanded:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="sponsortier.css" />
+</head>
+<body>
+  <header class="topbar is-scrolled" id="topbar" role="navigation" aria-label="Top">
+    <div class="wrap topbar__inner">
+      <nav class="nav" aria-label="Primary">
+        <div class="nav__left">
+          <a class="navlink" href="https://carechannels.org/">Home</a>
+          <a class="navlink" href="shop.html">Shop</a>
+        </div>
+
+        <a class="navbrand" href="sponsor.html" aria-label="Care Channels International">
+          <span class="navbrand__main">Care Channels</span>
+          <span class="navbrand__sub">International</span>
+        </a>
+
+        <div class="nav__rightWrap">
+          <div class="nav__right">
+            <a class="navlink navlink--active" href="sponsor.html">Sponsor</a>
+            <a class="navlink" href="https://carechannels.org/contact-us/">Contact</a>
+          </div>
+
+          <a class="navicon" href="sponsortier_login.html" aria-label="Sponsor Portal">
+            <svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true">
+              <path fill="currentColor" d="M12 12c2.76 0 5-2.24 5-5S14.76 2 12 2 7 4.24 7 7s2.24 5 5 5Zm0 2c-4.42 0-8 2.24-8 5v1h16v-1c0-2.76-3.58-5-8-5Z"/>
+            </svg>
+          </a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <section class="portalHero">
+    <div class="wrap portalHero__inner">
+      <p class="portalHero__eyebrow">Sponsor Portal</p>
+      <h1 class="portalHero__title">Log In to Sponsor Portal</h1>
+      <p class="portalHero__sub">View updates, milestones, and messages from the child you support.</p>
+    </div>
+  </section>
+
+  <main class="loginPage" aria-label="Sponsor portal login">
+    <section class="loginCard">
+      <div class="loginHead">
+        <img class="loginLogo" src="images/fyp_logo.png" alt="CCI logo" />
+        <div>
+          <h1 class="loginTitle zalando">Sponsor Portal</h1>
+          <p class="loginSub">This page is for sponsors to view updates and follow their child’s progress.</p>
+        </div>
+      </div>
+
+      <form id="loginForm" autocomplete="on">
+        <div class="grid2">
+          <div class="field">
+            <label class="label" for="email">Sponsor Email</label>
+            <input class="input" id="email" name="email" type="email" placeholder="yourname@email.com" required />
+          </div>
+
+          <div class="field">
+            <label class="label" for="pin">Sponsor PIN</label>
+            <input class="input" id="pin" name="pin" type="password" placeholder="••••••" required />
+            
+          </div>
+        </div>
+
+        <div class="row between" style="margin-top:14px;">
+          <button type="button" class="btn btn--ghost" onclick="alert('Reset password link sent to your email.')">Forgot PIN</button>
+          <button class="btn" type="submit">Log in</button>
+        </div>
+      </form>
+    </section>
+  </main>
+
+  <footer class="sitefooter">
+    <div class="wrap foot">
+      <div>
+        <div class="foot__brand">
+          <img src="images/fyp_logo.png" alt="" class="foot__logo">
+          <strong>CareChannels</strong>
+        </div>
+        <p class="foot__p">A marketplace and sponsorship platform that makes impact easier to understand and follow.</p>
+      </div>
+
+      <div>
+        <div class="foot__h">Explore</div>
+        <a class="foot__a" href="shop.html">Shop</a>
+        <a class="foot__a" href="sponsor.html">Sponsor</a>
+      </div>
+
+      <div>
+        <div class="foot__h">Portal</div>
+        <a class="foot__a" href="sponsortier_login.html">Login</a>
+        <a class="foot__a" href="admin_login.html">Admin</a>
+      </div>
+
+      <div>
+        <div class="foot__h">Contact</div>
+        <a class="foot__a" href="contact.html">Support</a>
+        <a class="foot__a" href="#">Email</a>
+      </div>
+    </div>
+
+    <div class="wrap foot__bar">
+      <small>© 2025 CareChannels International</small>
+    </div>
+  </footer>
+
+  <script>
+    if (localStorage.getItem('cci_sponsor_logged_in') === '1') {
+      window.location.href = 'sponsortier.html';
+    }
+
+    document.getElementById('loginForm').addEventListener('submit', (e) => {
+      e.preventDefault();
+
+      const email = document.getElementById('email').value.trim();
+      const pin = document.getElementById('pin').value.trim();
+
+      if (!email || !pin) return;
+
+      localStorage.setItem('cci_sponsor_logged_in', '1');
+      localStorage.setItem('cci_sponsor_email', email);
+      localStorage.setItem('cci_child_id', 'CH-102');
+
+      window.location.href = 'sponsortier.html';
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,202 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>CCI Admin – Dashboard</title>
+  <link rel="icon" href="images/fyp_logo.png" type="image/png" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=Zalando+Sans+SemiExpanded:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="admin.css" />
+</head>
+<body>
+  <header class="topbar" id="topbar" role="navigation" aria-label="Top">
+    <div class="wrap topbar__inner">
+      <nav class="nav" aria-label="Primary">
+        <div class="nav__left">
+          <a class="navlink" href="admin_dashboard.html">Dashboard</a>
+          <a class="navlink" href="admin_shop.html">Shop</a>
+        </div>
+
+        <a class="navbrand" href="admin_dashboard.html" aria-label="Care Channels Admin">
+          <span class="navbrand__main">Care Channels</span>
+          <span class="navbrand__sub">Admin</span>
+        </a>
+
+        <div class="nav__rightWrap">
+          <div class="nav__right">
+            <a class="navlink" href="admin_sponsor.html">Sponsor</a>
+            <a class="navlink" href="admin_metrics.html">Impact</a>
+          </div>
+
+          <a class="navicon" href="admin_login.html" aria-label="Logout">
+            <svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true">
+              <path fill="currentColor" d="M10 17l1.41-1.41L8.83 13H20v-2H8.83l2.58-2.59L10 7l-5 5 5 5zm-6 3h8v-2H4V6h8V4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2z"/>
+            </svg>
+          </a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <section class="adminHero">
+    <div class="wrap adminHero__inner">
+      <p class="adminHero__eyebrow">Staff Portal</p>
+      <h1 class="adminHero__title">Dashboard</h1>
+      <p class="adminHero__sub">A quick overview of the platform, recent updates, and key figures.</p>
+    </div>
+  </section>
+
+  <main class="adminPage">
+    <div class="wrap">
+      <div class="adminShell">
+        <aside class="sidebar" aria-label="Admin navigation">
+          <div class="side__top">
+            <p class="side__title nunito-sans">Logged in as</p>
+            <h2 class="side__org zalando-sans">CCI Staff</h2>
+          </div>
+
+          <nav class="side__nav">
+            <a class="side__a is-active" href="admin_dashboard.html">Dashboard</a>
+            <a class="side__a" href="admin_shop.html">Shop / Products</a>
+            <a class="side__a" href="admin_sponsor.html">Sponsorships</a>
+            <a class="side__a" href="admin_metrics.html">Impact Metrics</a>
+          </nav>
+        </aside>
+
+        <section class="main" aria-label="Dashboard content">
+          <div class="stats" aria-label="Key statistics">
+            <div class="stat">
+              <p class="stat__k">873</p>
+              <p class="stat__t">Products sold</p>
+            </div>
+            <div class="stat">
+              <p class="stat__k">24</p>
+              <p class="stat__t">Children sponsored</p>
+            </div>
+            <div class="stat">
+              <p class="stat__k">219</p>
+              <p class="stat__t">Families reached out</p>
+            </div>
+            <div class="stat">
+              <p class="stat__k">3</p>
+              <p class="stat__t">Active products</p>
+            </div>
+          </div>
+
+          <div class="actionRow">
+            <a class="btn" href="admin_shop.html">Manage Products</a>
+            <a class="btn btn--ghost" href="admin_sponsor.html">Post Sponsor Update</a>
+            <a class="btn btn--ghost" href="admin_metrics.html">Edit Impact Values</a>
+          </div>
+
+          <section class="card sectionGap">
+            <div class="card__hd">
+              <h2 class="card__title">Recent Activity</h2>
+              <p class="card__sub">Recent updates made by staff</p>
+            </div>
+
+            <div class="card__bd">
+              <div class="tableWrap">
+                <table class="table" aria-label="Recent activity table">
+                  <thead>
+                    <tr>
+                      <th>Date</th>
+                      <th>Staff</th>
+                      <th>Action</th>
+                      <th>Area</th>
+                      <th>Status</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>2026-02-03</td>
+                      <td>Admin</td>
+                      <td>Updated impact conversion rate</td>
+                      <td>Impact Metrics</td>
+                      <td><span class="badge badge--on">Published</span></td>
+                    </tr>
+                    <tr>
+                      <td>2026-02-02</td>
+                      <td>Admin</td>
+                      <td>Added new textile product</td>
+                      <td>Shop</td>
+                      <td><span class="badge badge--on">Live</span></td>
+                    </tr>
+                    <tr>
+                      <td>2026-02-01</td>
+                      <td>Admin</td>
+                      <td>Posted sponsor milestone update</td>
+                      <td>Sponsorships</td>
+                      <td><span class="badge badge--on">Published</span></td>
+                    </tr>
+                    <tr>
+                      <td>2026-01-29</td>
+                      <td>Admin</td>
+                      <td>Archived out-of-stock product</td>
+                      <td>Shop</td>
+                      <td><span class="badge badge--off">Archived</span></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </section>
+
+      </div>
+    </div>
+  </main>
+
+  <footer class="sitefooter">
+    <div class="wrap foot">
+      <div>
+        <div class="foot__brand">
+          <img src="images/fyp_logo.png" alt="" class="foot__logo">
+          <strong>CareChannels</strong>
+        </div>
+        <p class="foot__p">Internal portal for managing shop items, sponsorship updates, and impact data.</p>
+      </div>
+
+      <div>
+        <div class="foot__h">Manage</div>
+        <a class="foot__a" href="admin_shop.html">Products</a>
+        <a class="foot__a" href="admin_sponsor.html">Sponsorships</a>
+      </div>
+
+      <div>
+        <div class="foot__h">Impact</div>
+        <a class="foot__a" href="admin_metrics.html">Impact Metrics</a>
+        <a class="foot__a" href="admin_dashboard.html">Activity</a>
+      </div>
+
+      <div>
+        <div class="foot__h">Public Pages</div>
+        <a class="foot__a" href="shop.html">Shop</a>
+        <a class="foot__a" href="sponsor.html">Sponsor</a>
+      </div>
+    </div>
+
+    <div class="wrap foot__bar">
+      <small>© 2025 CareChannels International</small>
+    </div>
+  </footer>
+
+  <script>
+    const topbar = document.getElementById('topbar');
+
+    function handleScroll() {
+      if (window.scrollY > 10) {
+        topbar.classList.add('is-scrolled');
+      } else {
+        topbar.classList.remove('is-scrolled');
+      }
+    }
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    window.addEventListener('load', handleScroll);
+  </script>
+</body>
+</html>
