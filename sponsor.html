@@ -79,14 +79,19 @@
     <div class="video-shell" id="videoShell">
       <iframe
         id="sponsorVideo"
-        width="100%"
-        height="100%"
-        src="https://www.youtube.com/embed/oYk9Yp_suxU?autoplay=1&mute=1&loop=1&playlist=oYk9Yp_suxU&playsinline=1&rel=0"
+        src="https://www.youtube.com/embed/oYk9Yp_suxU?autoplay=1&mute=1&loop=1&playlist=oYk9Yp_suxU&controls=0&modestbranding=1&rel=0&playsinline=1"
         title="Sponsor video"
         frameborder="0"
         allow="autoplay; encrypted-media; picture-in-picture; fullscreen"
         allowfullscreen>
       </iframe>
+
+      <button class="video-overlay" id="videoOverlay" type="button" aria-label="Play sponsor video with sound">
+        <span class="video-overlay__circle">
+          <span class="video-overlay__triangle"></span>
+        </span>
+        <span class="video-overlay__text">Tap to hear the full story</span>
+      </button>
     </div>
   </div>
 </section>
