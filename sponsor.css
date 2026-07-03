@@ -252,12 +252,11 @@ body{
   margin:0 auto;
 }
 
-.video-shell video{
+.video-shell iframe{
   width:100%;
   height:100%;
-  object-fit:contain;
   display:block;
-  background:#ece7bf;
+  border:0;
 }
 
 .video-overlay{
