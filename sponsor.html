@@ -74,27 +74,13 @@
         <p class="sponsor-banner__sub">Watch how consistent support transforms education, confidence, and hope.</p>
       </div>
     </section>
-<section class="video-section">
-  <div class="wrap">
-    <div class="video-shell" id="videoShell">
-      <iframe
-        id="sponsorVideo"
-        src="https://www.youtube.com/embed/oYk9Yp_suxU?autoplay=1&mute=1&loop=1&playlist=oYk9Yp_suxU&controls=0&modestbranding=1&rel=0&playsinline=1"
-        title="Sponsor video"
-        frameborder="0"
-        allow="autoplay; encrypted-media; picture-in-picture; fullscreen"
-        allowfullscreen>
-      </iframe>
 
-      <button class="video-overlay" id="videoOverlay" type="button" aria-label="Play sponsor video with sound">
-        <span class="video-overlay__circle">
-          <span class="video-overlay__triangle"></span>
-        </span>
-        <span class="video-overlay__text">Tap to hear the full story</span>
-      </button>
-    </div>
-  </div>
-</section>
+    <section class="video-section">
+      <div class="wrap">
+        <div class="video-shell" id="videoShell">
+          <video id="sponsorVideo" autoplay muted playsinline loop preload="auto">
+            <source src="video/sponsor.mp4" type="video/mp4">
+          </video>
 
           <button class="video-overlay" id="videoOverlay" aria-label="Play sponsor video with sound">
             <span class="video-overlay__icon">▶</span>
