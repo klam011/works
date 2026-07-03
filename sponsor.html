@@ -305,54 +305,98 @@
       });
     })();
 
-    (function(){
-      const video = document.getElementById('sponsorVideo');
-      const overlay = document.getElementById('videoOverlay');
-      const shell = document.getElementById('videoShell');
+    <script>
+  function comingSoon(e) {
+    e.preventDefault();
+    alert('This section is coming soon.');
+  }
 
-      if (!video || !overlay || !shell) return;
+  const topbar = document.getElementById('topbar');
 
-      function enableSound() {
-        video.muted = false;
-        video.controls = true;
-        video.play().catch(() => {});
-        overlay.classList.add('is-hidden');
-      }
-
-      overlay.addEventListener('click', enableSound);
-      shell.addEventListener('click', function(e){
-        if (e.target === overlay || overlay.contains(e.target)) return;
-        if (video.muted) {
-          enableSound();
-        }
-      });
-    })();
-  
-  const sponsorVideo = document.getElementById('sponsorVideo');
-  const videoOverlay = document.getElementById('videoOverlay');
-
-  async function playFromStartFullscreen() {
-    try {
-      sponsorVideo.pause();
-      sponsorVideo.currentTime = 0;
-      sponsorVideo.muted = false;
-      sponsorVideo.loop = false;
-      sponsorVideo.playsInline = false;
-
-      videoOverlay.classList.add('is-hidden');
-
-      if (sponsorVideo.requestFullscreen) {
-        await sponsorVideo.requestFullscreen();
-      } else if (sponsorVideo.webkitEnterFullscreen) {
-        sponsorVideo.webkitEnterFullscreen(); // iPhone Safari
-      }
-
-      await sponsorVideo.play();
-    } catch (err) {
-      console.log('Fullscreen/play failed:', err);
+  function handleScroll() {
+    if (window.scrollY > 10) {
+      topbar.classList.add('is-scrolled');
+    } else {
+      topbar.classList.remove('is-scrolled');
     }
   }
 
+  window.addEventListener('scroll', handleScroll, { passive: true });
+  window.addEventListener('load', handleScroll);
+
+  (function () {
+    const counters = document.querySelectorAll('.statCard__num');
+    if (!counters.length) return;
+
+    function animateCounter(el) {
+      const target = parseInt(el.dataset.target, 10) || 0;
+      const duration = 1800;
+      const startTime = performance.now();
+
+      function update(now) {
+        const progress = Math.min((now - startTime) / duration, 1);
+        const eased = 1 - Math.pow(1 - progress, 3);
+        const value = Math.floor(target * eased);
+        el.textContent = value.toLocaleString();
+
+        if (progress < 1) {
+          requestAnimationFrame(update);
+        } else {
+          el.textContent = target.toLocaleString();
+        }
+      }
+
+      requestAnimationFrame(update);
+    }
+
+    const observer = new IntersectionObserver((entries, obs) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          counters.forEach(animateCounter);
+          obs.disconnect();
+        }
+      });
+    }, { threshold: 0.35 });
+
+    observer.observe(document.querySelector('.heroStats'));
+  })();
+
+  (function(){
+    const form = document.querySelector('.chat-form');
+    if(!form) return;
+
+    const win = document.querySelector('.chat-window');
+    const input = form.querySelector('input');
+
+    const add = (cls, text) => {
+      const b = document.createElement('div');
+      b.className = 'bubble ' + cls;
+      b.textContent = text;
+      win.appendChild(b);
+      win.scrollTop = win.scrollHeight;
+    };
+
+    const reply = q => {
+      const rules = [
+        {k:/receipt|tax/i, a:"We email tax receipts monthly. You can also download them from your account > Receipts."},
+        {k:/cancel/i, a:"Yes — you can cancel anytime from your account settings. Your support runs to the end of the current cycle."},
+        {k:/update|progress|often/i, a:"You’ll receive enrolment, progress note, health check and term results updates."},
+        {k:/change|plan|upgrade|downgrade/i, a:"You can change plans anytime. The new rate starts next cycle."}
+      ];
+      const hit = rules.find(r => r.k.test(q));
+      return hit ? hit.a : "Thanks! I’ve sent your question to the team — meanwhile try the FAQs on the right.";
+    };
+
+    form.addEventListener('submit', e => {
+      e.preventDefault();
+      const txt = input.value.trim();
+      if (!txt) return;
+      add('user', txt);
+      input.value = '';
+      setTimeout(() => add('bot', reply(txt)), 250);
+    });
+  })();
+</script>
   });
   </script>
 </body>
