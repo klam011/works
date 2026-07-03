@@ -245,11 +245,11 @@ body{
   width:100%;
   max-width:900px;
   aspect-ratio:16 / 9;
-  margin:0 auto;
-  border-radius:12px;
+  border-radius:8px;
   overflow:hidden;
-  background:#000;
   position:relative;
+  margin:0 auto;
+  background:#000;
 }
 
 .video-shell iframe{
@@ -257,37 +257,6 @@ body{
   height:100%;
   display:block;
   border:0;
-}
-
-.video-overlay{
-  position:absolute;
-  inset:0;
-  border:0;
-  background:transparent;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  flex-direction:column;
-  gap:0;
-  cursor:pointer;
-  color:#8f978f;
-  transition:opacity .2s ease;
-}
-
-.video-overlay__icon{
-  font-size:72px;
-  line-height:1;
-}
-
-.video-overlay__hand{
-  font-size:54px;
-  line-height:1;
-  margin-top:-18px;
-}
-
-.video-overlay.is-hidden{
-  opacity:0;
-  pointer-events:none;
 }
 
 /* beige intro strip */
