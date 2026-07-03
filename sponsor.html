@@ -78,14 +78,14 @@
     <section class="video-section">
       <div class="wrap">
         <div class="video-shell" id="videoShell">
-          <video id="sponsorVideo" autoplay muted playsinline loop preload="auto">
-            <source src="video/sponsor.mp4" type="video/mp4">
-          </video>
-
-          <button class="video-overlay" id="videoOverlay" aria-label="Play sponsor video with sound">
-            <span class="video-overlay__icon">▶</span>
-            <span class="video-overlay__hand">☝</span>
-          </button>
+          <iframe
+            id="sponsorVideo"
+            src="https://www.youtube.com/embed/oYk9Yp_suxU?autoplay=1&mute=1&loop=1&playlist=oYk9Yp_suxU&playsinline=1&rel=0&controls=1"
+            title="Sponsor video"
+            frameborder="0"
+            allow="autoplay; encrypted-media; picture-in-picture; fullscreen"
+            allowfullscreen>
+          </iframe>
         </div>
       </div>
     </section>
@@ -266,7 +266,8 @@
         });
       }, { threshold: 0.35 });
 
-      observer.observe(document.querySelector('.heroStats'));
+      const heroStats = document.querySelector('.heroStats');
+      if (heroStats) observer.observe(heroStats);
     })();
 
     (function(){
@@ -304,64 +305,6 @@
         setTimeout(() => add('bot', reply(txt)), 250);
       });
     })();
-
-    (function(){
-      const video = document.getElementById('sponsorVideo');
-      const overlay = document.getElementById('videoOverlay');
-      const shell = document.getElementById('videoShell');
-
-      if (!video || !overlay || !shell) return;
-
-      function enableSound() {
-        video.muted = false;
-        video.controls = true;
-        video.play().catch(() => {});
-        overlay.classList.add('is-hidden');
-      }
-
-      overlay.addEventListener('click', enableSound);
-      shell.addEventListener('click', function(e){
-        if (e.target === overlay || overlay.contains(e.target)) return;
-        if (video.muted) {
-          enableSound();
-        }
-      });
-    })();
-  
-  const sponsorVideo = document.getElementById('sponsorVideo');
-  const videoOverlay = document.getElementById('videoOverlay');
-
-  async function playFromStartFullscreen() {
-    try {
-      sponsorVideo.pause();
-      sponsorVideo.currentTime = 0;
-      sponsorVideo.muted = false;
-      sponsorVideo.loop = false;
-      sponsorVideo.playsInline = false;
-
-      videoOverlay.classList.add('is-hidden');
-
-      if (sponsorVideo.requestFullscreen) {
-        await sponsorVideo.requestFullscreen();
-      } else if (sponsorVideo.webkitEnterFullscreen) {
-        sponsorVideo.webkitEnterFullscreen(); // iPhone Safari
-      }
-
-      await sponsorVideo.play();
-    } catch (err) {
-      console.log('Fullscreen/play failed:', err);
-    }
-  }
-
-  videoOverlay.addEventListener('click', playFromStartFullscreen);
-
-  sponsorVideo.addEventListener('ended', () => {
-    sponsorVideo.currentTime = 0;
-    sponsorVideo.muted = true;
-    sponsorVideo.loop = true;
-    sponsorVideo.play();
-    videoOverlay.classList.remove('is-hidden');
-  });
   </script>
 </body>
 </html>
