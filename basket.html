@@ -3,23 +3,25 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Your Basket · Care Channels International</title>
+  <title>CareChannels – Sponsorships</title>
 
   <link rel="icon" href="images/fyp_logo.png" type="image/png" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=Zalando+Sans+SemiExpanded:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=ZCOOL+QingKe+HuangYou&display=swap" rel="stylesheet">
 
-  <link rel="stylesheet" href="basket.css">
+  <link rel="stylesheet" href="sponsor.css" />
 </head>
 <body>
   <header class="topbar" id="topbar" role="navigation" aria-label="Top">
     <div class="wrap topbar__inner">
       <nav class="nav" aria-label="Primary">
+
         <div class="nav__left">
-          <a class="navlink" href="index.html">Home</a>
-          <a class="navlink navlink--active" href="shop.html">Shop</a>
+          <a class="navlink" href="https://carechannels.org/">Home</a>
+          <a class="navlink" href="shop.html">Shop</a>
         </div>
 
         <span class="navbrand" aria-label="Care Channels International">
@@ -29,81 +31,147 @@
 
         <div class="nav__rightWrap">
           <div class="nav__right">
-            <a class="navlink" href="sponsor.html">Sponsor</a>
+            <a class="navlink navlink--active" href="sponsor.html">Sponsor</a>
             <a class="navlink" href="https://carechannels.org/contact-us/">Contact</a>
           </div>
 
-          <a class="navicon" href="basket.html" aria-label="Basket">
-            <img src="images/basketicon.png" alt="Basket" class="navicon__img">
-            <span class="basket-badge" id="basketBadge">0</span>
+          <a class="navicon" href="sponsortier_login.html" aria-label="Profile">
+            <svg viewBox="0 0 24 24" width="26" height="26" aria-hidden="true">
+              <path fill="currentColor" d="M12 12c2.76 0 5-2.24 5-5S14.76 2 12 2 7 4.24 7 7s2.24 5 5 5Zm0 2c-4.42 0-8 2.24-8 5v1h16v-1c0-2.76-3.58-5-8-5Z"/>
+            </svg>
           </a>
         </div>
+
       </nav>
     </div>
   </header>
 
-  <main class="basket-main">
-    <section class="basket-wrap">
-      <div class="basket-hero">
-        <h1 class="basket-title">Your Basket</h1>
-        <p class="basket-sub">Gathered with purpose. Ready to create impact.</p>
-      </div>
+  <main class="sponsor-main">
+    <section class="hero hero--stats">
+      <div class="wrap heroStats">
 
-      <div class="basket-layout">
-        <div class="basket-left">
-          <section class="basket-card">
-            <div class="basket-head">
-              <div></div>
-              <div class="basket-head__item">Item</div>
-              <div class="basket-head__qty">Qty.</div>
-              <div class="basket-head__price">Price</div>
-            </div>
-
-            <div id="basketItems"></div>
-          </section>
-
-          <section class="summary-card">
-            <h2 class="summary-title">Order Summary</h2>
-            <div class="summary-row">
-              <span>Sub-total</span>
-              <strong id="subtotalValue">$0</strong>
-            </div>
-            <div class="summary-row">
-              <span>Shipping</span>
-              <strong id="shippingValue">$0</strong>
-            </div>
-            <div class="summary-row summary-row--total">
-              <span>Total</span>
-              <strong id="totalValue">$0</strong>
-            </div>
-          </section>
-
-          <div class="checkout-wrap">
-            <button class="checkout-btn" id="checkoutBtn" type="button">Check Out</button>
-          </div>
+        <div class="statCard">
+          <div class="statCard__num" data-target="24">0</div>
+          <div class="statCard__label">kids sponsored</div>
         </div>
 
-        <aside class="basket-right">
-          <section class="side-card side-card--message">
-            <h2 class="side-card__title">Leave a message with<br>your purchase</h2>
-            <textarea id="orderNote" class="message-box" placeholder="..."></textarea>
-          </section>
+        <div class="statCard">
+          <div class="statCard__num" data-target="873">0</div>
+          <div class="statCard__label">artworks brought home</div>
+        </div>
 
-          <section class="side-card side-card--impact">
-            <h2 class="side-card__title">Impact Calculator</h2>
-            <p class="impact-copy">With your current basket, you are helping to fund:</p>
+        <div class="statCard">
+          <div class="statCard__num" data-target="219">0</div>
+          <div class="statCard__label">families reached out</div>
+        </div>
 
-            <div class="impact-pill">
-              <span class="impact-pill__count" id="lunchCount">0</span>
-              <span class="impact-pill__label">School lunches</span>
+      </div>
+    </section>
+
+    <section class="sponsor-banner">
+      <div class="wrap sponsor-banner__inner">
+        <h1 class="sponsor-banner__title">Sponsor a Child, Change a Life.</h1>
+        <p class="sponsor-banner__sub">Watch how consistent support transforms education, confidence, and hope.</p>
+      </div>
+    </section>
+
+    <section class="video-section">
+      <div class="wrap">
+        <div class="video-shell" id="videoShell">
+          <iframe
+            id="sponsorVideo"
+            src="https://www.youtube.com/embed/oYk9Yp_suxU?autoplay=1&mute=1&loop=1&playlist=oYk9Yp_suxU&playsinline=1&rel=0&controls=1"
+            title="Sponsor video"
+            frameborder="0"
+            allow="autoplay; encrypted-media; picture-in-picture; fullscreen"
+            allowfullscreen>
+          </iframe>
+        </div>
+      </div>
+    </section>
+
+    <section class="intro-panel">
+      <div class="wrap intro-panel__inner">
+        <h2 class="intro-panel__title">Not Sure Where to Start?</h2>
+        <p class="intro-panel__text">We understand making a difference can feel overwhelming.</p>
+        <p class="intro-panel__text">
+          That’s why we’ve created simple sponsorship options to help you get started with confidence.
+          Just choose the level of support that feels right.
+        </p>
+      </div>
+    </section>
+
+    <section class="plans-section">
+      <div class="wrap">
+        <h2 class="plans-section__title">Choose A Plan</h2>
+
+        <div class="plan-grid">
+          <article class="plan-card">
+            <h3 class="plan-card__title">Basic Support</h3>
+            <div class="plan-card__price">$30/month</div>
+            <p class="plan-card__desc">Helps cover school supplies and basic meals.</p>
+            <button class="plan-card__btn" type="button" onclick="window.location.href='sponsorlm.html'">Learn More</button>
+          </article>
+
+          <article class="plan-card">
+            <h3 class="plan-card__title">Growth Support</h3>
+            <div class="plan-card__price">$50/month</div>
+            <p class="plan-card__desc">Includes healthcare and tuition support.</p>
+            <button class="plan-card__btn" type="button" onclick="window.location.href='sponsorlm.html'">Learn More</button>
+          </article>
+
+          <article class="plan-card">
+            <h3 class="plan-card__title">Full Support</h3>
+            <div class="plan-card__price">$80/month</div>
+            <p class="plan-card__desc">Provides full education, meals, and family support.</p>
+            <button class="plan-card__btn" type="button" onclick="window.location.href='sponsorlm.html'">Learn More</button>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="help-banner">
+      <div class="wrap">
+        <h2 class="help-banner__title">If you still want to know more, talk to us!</h2>
+      </div>
+    </section>
+
+    <section class="faq-chat-section">
+      <div class="wrap faq-chat-grid">
+        <div class="chat-card" aria-label="Ask a question">
+          <div class="chat-window" aria-live="polite">
+            <div class="bubble bot">
+              Hi! I can help with sponsorships. Try tapping a FAQ or ask me a question below.
             </div>
+          </div>
 
-            <div class="impact-pill">
-              <span class="impact-pill__count" id="familyCount">0</span>
-              <span class="impact-pill__label">Artisan’s family</span>
-            </div>
-          </section>
-        </aside>
+          <form class="chat-form" aria-label="Chat form">
+            <input type="text" placeholder="Type your questions ..." aria-label="Type your question">
+            <button type="submit">Send</button>
+          </form>
+        </div>
+
+        <div class="faq-card" aria-label="Frequently asked questions">
+          <details>
+            <summary>Can I change my monthly plan later?</summary>
+            <p>Yes. You can upgrade or downgrade anytime from your account. The new rate applies on the next billing cycle.</p>
+          </details>
+
+          <details>
+            <summary>Are my donations tax-deductible?</summary>
+            <p>We email monthly receipts you can use for tax purposes. You can also download past receipts from your account.</p>
+          </details>
+
+          <details>
+            <summary>How often do I receive updates?</summary>
+            <p>You’ll receive enrolment, progress note, health check and term results updates throughout the sponsorship journey.</p>
+          </details>
+
+          <details>
+            <summary>Can I cancel anytime?</summary>
+            <p>Yes. You can cancel from your account settings. Your support continues until the end of the current billing cycle.</p>
+          </details>
+        </div>
       </div>
     </section>
   </main>
@@ -120,9 +188,9 @@
 
       <div class="foot__col">
         <div class="foot__h">Programs</div>
-        <a href="#" class="foot__a" onclick="comingSoon(event)">Livelihood</a>
-        <a href="#" class="foot__a" onclick="comingSoon(event)">Education</a>
-        <a href="#" class="foot__a" onclick="comingSoon(event)">Healthcare</a>
+        <a href="#" class="foot__a">Livelihood</a>
+        <a href="#" class="foot__a">Education</a>
+        <a href="#" class="foot__a">Healthcare</a>
       </div>
 
       <div class="foot__col">
@@ -146,147 +214,96 @@
   </footer>
 
   <script>
-    const BASKET_KEY = 'cciBasket';
-    const ORDER_NOTE_KEY = 'cciOrderNote';
-    const SHIPPING = 5;
-
-    function comingSoon(e){
-      if (e && typeof e.preventDefault === 'function') {
-        e.preventDefault();
-      }
+    function comingSoon(e) {
+      e.preventDefault();
       alert('This section is coming soon.');
     }
 
-    function getBasket(){
-      try{
-        return JSON.parse(localStorage.getItem(BASKET_KEY)) || [];
-      }catch(err){
-        return [];
-      }
-    }
+    const topbar = document.getElementById('topbar');
 
-    function saveBasket(items){
-      localStorage.setItem(BASKET_KEY, JSON.stringify(items));
-    }
-
-    function formatMoney(value){
-      return '$' + value.toFixed(0);
-    }
-
-    function updateBasketBadge(){
-      const badge = document.getElementById('basketBadge');
-      const count = getBasket().reduce((sum, item) => sum + item.qty, 0);
-      badge.textContent = count;
-      badge.classList.toggle('is-visible', count > 0);
-    }
-
-    function renderBasket(){
-      const basket = getBasket();
-      const basketItems = document.getElementById('basketItems');
-      const subtotalValue = document.getElementById('subtotalValue');
-      const shippingValue = document.getElementById('shippingValue');
-      const totalValue = document.getElementById('totalValue');
-      const lunchCount = document.getElementById('lunchCount');
-      const familyCount = document.getElementById('familyCount');
-
-      basketItems.innerHTML = '';
-
-      if (!basket.length) {
-        basketItems.innerHTML = `
-          <div class="basket-empty">
-            <p>Your basket is empty.</p>
-            <a href="products_thiri.html" class="basket-empty__link">Continue shopping</a>
-          </div>
-        `;
+    function handleScroll() {
+      if (window.scrollY > 10) {
+        topbar.classList.add('is-scrolled');
       } else {
-        basket.forEach((item, index) => {
-          const row = document.createElement('div');
-          row.className = 'basket-row';
-          row.innerHTML = `
-            <div class="basket-row__imageWrap">
-              <img src="${item.image}" alt="${item.name}" class="basket-row__image">
-            </div>
-
-            <div class="basket-row__item">
-              <h3 class="basket-row__title">${item.name}</h3>
-              <p class="basket-row__sub">${item.subtitle}</p>
-            </div>
-
-            <div class="basket-row__qty">x${item.qty}</div>
-
-            <div class="basket-row__price">${formatMoney(item.price * item.qty)}</div>
-          `;
-          basketItems.appendChild(row);
-
-          if (index !== basket.length - 1) {
-            const divider = document.createElement('div');
-            divider.className = 'basket-divider';
-            basketItems.appendChild(divider);
-          }
-        });
+        topbar.classList.remove('is-scrolled');
       }
-
-      const subtotal = basket.reduce((sum, item) => sum + (item.price * item.qty), 0);
-      const shipping = basket.length ? SHIPPING : 0;
-      const total = subtotal + shipping;
-      const totalQty = basket.reduce((sum, item) => sum + item.qty, 0);
-
-      subtotalValue.textContent = formatMoney(subtotal);
-      shippingValue.textContent = formatMoney(shipping);
-      totalValue.textContent = formatMoney(total);
-
-      lunchCount.textContent = totalQty * 2;
-      familyCount.textContent = basket.length ? 1 : 0;
-
-      updateBasketBadge();
     }
 
-    const orderNote = document.getElementById('orderNote');
-    orderNote.value = localStorage.getItem(ORDER_NOTE_KEY) || '';
-    orderNote.addEventListener('input', function(){
-      localStorage.setItem(ORDER_NOTE_KEY, this.value);
-    });
-
-    
-document.getElementById('checkoutBtn').addEventListener('click', function(){
-  const basket = getBasket();
-
-  if (!basket.length) {
-    alert('Your basket is empty. Please add an item before checking out.');
-    return;
-  }
-
-  const now = new Date();
-  const year = now.getFullYear();
-  const randomPart = Math.floor(1000 + Math.random() * 9000);
-  const orderNumber = `#CCI-${year}-${randomPart}`;
-
-  localStorage.setItem('cciLastOrder', JSON.stringify({
-    orderNumber,
-    createdAt: now.toISOString(),
-    items: basket
-  }));
-
-  localStorage.setItem('cciBasket', JSON.stringify([]));
-  localStorage.removeItem('cciOrderNote');
-
-  window.location.href = 'confirm.html';
-});
-
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    window.addEventListener('load', handleScroll);
 
     (function () {
-      const topbar = document.getElementById('topbar');
-      const onScroll = () => {
-        if (window.scrollY > 8) {
-          topbar.classList.add('is-scrolled');
-        } else {
-          topbar.classList.remove('is-scrolled');
+      const counters = document.querySelectorAll('.statCard__num');
+      if (!counters.length) return;
+
+      function animateCounter(el) {
+        const target = parseInt(el.dataset.target, 10) || 0;
+        const duration = 1800;
+        const startTime = performance.now();
+
+        function update(now) {
+          const progress = Math.min((now - startTime) / duration, 1);
+          const eased = 1 - Math.pow(1 - progress, 3);
+          const value = Math.floor(target * eased);
+          el.textContent = value.toLocaleString();
+
+          if (progress < 1) {
+            requestAnimationFrame(update);
+          } else {
+            el.textContent = target.toLocaleString();
+          }
         }
+
+        requestAnimationFrame(update);
+      }
+
+      const observer = new IntersectionObserver((entries, obs) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            counters.forEach(animateCounter);
+            obs.disconnect();
+          }
+        });
+      }, { threshold: 0.35 });
+
+      const heroStats = document.querySelector('.heroStats');
+      if (heroStats) observer.observe(heroStats);
+    })();
+
+    (function(){
+      const form = document.querySelector('.chat-form');
+      if(!form) return;
+
+      const win = document.querySelector('.chat-window');
+      const input = form.querySelector('input');
+
+      const add = (cls, text) => {
+        const b = document.createElement('div');
+        b.className = 'bubble ' + cls;
+        b.textContent = text;
+        win.appendChild(b);
+        win.scrollTop = win.scrollHeight;
       };
 
-      document.addEventListener('scroll', onScroll, { passive: true });
-      onScroll();
-      renderBasket();
+      const reply = q => {
+        const rules = [
+          {k:/receipt|tax/i, a:"We email tax receipts monthly. You can also download them from your account > Receipts."},
+          {k:/cancel/i, a:"Yes — you can cancel anytime from your account settings. Your support runs to the end of the current cycle."},
+          {k:/update|progress|often/i, a:"You’ll receive enrolment, progress note, health check and term results updates."},
+          {k:/change|plan|upgrade|downgrade/i, a:"You can change plans anytime. The new rate starts next cycle."}
+        ];
+        const hit = rules.find(r => r.k.test(q));
+        return hit ? hit.a : "Thanks! I’ve sent your question to the team — meanwhile try the FAQs on the right.";
+      };
+
+      form.addEventListener('submit', e => {
+        e.preventDefault();
+        const txt = input.value.trim();
+        if (!txt) return;
+        add('user', txt);
+        input.value = '';
+        setTimeout(() => add('bot', reply(txt)), 250);
+      });
     })();
   </script>
 </body>
